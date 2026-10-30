@@ -52,7 +52,7 @@
 <figure class="wp-block-image vb-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo villabate_img( 'logo-lockup.png' ); ?>" alt="Villabate Alba, Pasticceria Gelateria"/></a></figure>
 <!-- /wp:image -->
 
-<!-- wp:navigation {"overlayMenu":"mobile","className":"vb-nav","layout":{"type":"flex","justifyContent":"center"}} -->
+<!-- wp:navigation {"overlayMenu":"mobile","className":"vb-nav","layout":{"type":"flex","justifyContent":"right"}} -->
 <!-- wp:navigation-link {"label":"Custom cakes","url":"<?php echo villabate_page_url( 'custom-cakes' ); ?>","kind":"custom"} /-->
 
 <!-- wp:navigation-link {"label":"Our story","url":"<?php echo villabate_home_url( 'story' ); ?>","kind":"custom"} /-->
