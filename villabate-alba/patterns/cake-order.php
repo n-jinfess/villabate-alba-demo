@@ -21,7 +21,11 @@ $villabate_occasions = array(
 	),
 	'wedding'     => array(
 		'Wedding',
-		array( 'cartocci-cake.jpg' => 'A wedding tower of sugared cartocci and fresh roses' ),
+		array(
+			'wedding-gold-tiers.jpg'   => 'A five-tier white wedding cake with gold scrollwork and sugar roses',
+			'cartocci-cake.jpg'        => 'A wedding tower of sugared cartocci and fresh roses',
+			'wedding-ceiling-cake.jpg' => 'A tiered black and white cake under the painted ceiling, with cookie trays around it',
+		),
 	),
 	'fathers-day' => array(
 		'Father’s Day',

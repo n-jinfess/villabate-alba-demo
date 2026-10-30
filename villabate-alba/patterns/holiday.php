@@ -6,11 +6,12 @@
  * Description: Skip-the-line pitch and the "every feast on the calendar" strip (homepage). The pre-order form itself is on the Shop page.
  */
 $villabate_feasts = array(
-	array( 'holiday-easter.jpg', 'Easter', 'Hand-painted chocolate eggs' ),
+	array( 'feast-st-patricks.jpg', 'St. Patrick’s Day', 'Pistachio zeppole and sfingi' ),
+	array( 'feast-easter-egg.jpg', 'Easter', 'Hand-painted chocolate eggs' ),
 	array( 'season-mothers-day.jpg', 'Mother’s Day', 'Heart cookies for Mom' ),
 	array( 'holiday-fathers-day.jpg', 'Father’s Day', 'Custom cakes for Dad' ),
 	array( 'season-thanksgiving.jpg', 'Thanksgiving', 'The turkey cake and pies' ),
-	array( 'season-christmas.jpg', 'Christmas', 'Pastry trays and cookies' ),
+	array( 'feast-gingerbread-house.jpg', 'Christmas', 'Gingerbread houses, trays and cookies' ),
 );
 ?>
 <!-- wp:group {"tagName":"section","anchor":"holiday","className":"vb-section vb-holiday","layout":{"type":"constrained"}} -->

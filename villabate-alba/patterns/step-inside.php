@@ -28,7 +28,7 @@
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:image {"className":"vb-framed-photo vb-arch"} -->
-<figure class="wp-block-image vb-framed-photo vb-arch"><img src="<?php echo villabate_img( 'inside-espresso.jpg' ); ?>" alt="A glass of espresso with cocoa next to a cannoli with candied orange on the marble bar"/></figure>
+<figure class="wp-block-image vb-framed-photo vb-arch"><img src="<?php echo villabate_img( 'espresso-bar.jpg' ); ?>" alt="A cappuccino and a sugar-dusted pastry at the bar"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></section>
