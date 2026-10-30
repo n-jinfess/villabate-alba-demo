@@ -108,7 +108,12 @@ body[data-vb-season]:not([data-vb-season="summer"]) .vb-only-summer { display: n
 /* ---------- First visit ---------- */
 .vb-framed { background: var(--vb-white); border: 1.5px solid var(--vb-green); outline: 8px solid var(--vb-parchment); outline-offset: -14px; border-radius: 28px; padding: clamp(28px, 4vw, 48px); }
 .vb-must-grid { gap: 24px; margin-top: 24px; }
-.vb-must { text-align: center; }
+.vb-must { text-align: center; display: flex; flex-direction: column; align-items: center; }
+/* Badge sits right under the photo, so every badge lines up whatever the text length */
+.vb-must figure { order: 0; }
+.vb-must::after { order: 1; margin-bottom: 10px; }
+.vb-must h3 { order: 2; }
+.vb-must p { order: 3; }
 .vb-must figure { display: flex; justify-content: center; margin: 0 0 10px; }
 .vb-must h3 { font-size: 1.3rem; margin: 0 0 6px; }
 .vb-must p { font-size: .8125rem; color: var(--vb-muted); line-height: 1.45; margin: 0 0 8px; }
