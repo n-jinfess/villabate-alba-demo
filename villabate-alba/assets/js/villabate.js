@@ -169,44 +169,23 @@
 		window.setInterval( function () { current = ( current + 1 ) % slides.length; show( current ); }, reduce ? 9000 : 4000 );
 	} );
 
-	/* Scroll motion: each block rises in as it reaches the viewport, cards in a row one after another */
-	var root = document.documentElement;
-	if ( root.classList.contains( 'vb-motion' ) ) {
-		if ( ! ( 'IntersectionObserver' in window ) ) {
-			root.classList.remove( 'vb-motion' );
-		} else {
-			var GRIDS = '.vb-must-grid, .vb-card-grid, .vb-shop-grid, .vb-merch-grid, .vb-feasts, .vb-timeline, .vb-review-grid, .vb-ig-grid, .vb-press, .vb-tile-panel, .vb-contest__photos, .vb-steps';
-			var targets = [];
-			var mark = function ( el, i ) {
-				el.classList.add( 'vb-reveal' );
-				el.style.setProperty( '--vb-d', ( Math.min( i, 6 ) * 0.08 ) + 's' );
-				targets.push( el );
-			};
-			var collect = function ( parent ) {
-				var i = 0;
-				Array.prototype.forEach.call( parent.children, function ( el ) {
-					if ( el.matches( '.vb-tiles, .vb-tricolore, script, style' ) ) { return; }
-					if ( el.matches( GRIDS ) ) {
-						Array.prototype.forEach.call( el.children, function ( card, k ) { mark( card, k ); } );
-					} else if ( el.matches( '.wp-block-columns, .wp-block-column, .vb-framed' ) || el.querySelector( GRIDS ) ) {
-						collect( el );
-					} else {
-						mark( el, i++ );
-					}
-				} );
-			};
-			document.querySelectorAll( '.vb-section, .vb-footer' ).forEach( collect );
-
-			var io = new IntersectionObserver( function ( entries ) {
-				entries.forEach( function ( entry ) {
-					if ( entry.isIntersecting ) {
-						entry.target.classList.add( 'is-in' );
-						io.unobserve( entry.target );
-					}
-				} );
-			}, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 } );
-			targets.forEach( function ( el ) { io.observe( el ); } );
-		}
-		root.classList.add( 'vb-ready' );
+	/* Photo fade-in: supporting photos only, once, on wide screens. Text, prices, buttons, the shop and
+	   the order forms never animate, and anything already on screen at load is left alone. */
+	var PHOTOS = '.vb-cat figure, .vb-feast figure, .vb-timeline__step > figure, .vb-slides, .vb-euro figure, .vb-inside figure, .vb-contest__photos figure, .vb-cakes .vb-arch--framed, .vb-ig-grid figure, .vb-visit .vb-framed-photo';
+	var wide = window.matchMedia && window.matchMedia( '(min-width: 782px)' ).matches;
+	if ( document.documentElement.classList.contains( 'vb-motion' ) && wide && 'IntersectionObserver' in window ) {
+		var io = new IntersectionObserver( function ( entries ) {
+			entries.forEach( function ( entry ) {
+				if ( entry.isIntersecting ) {
+					entry.target.classList.add( 'is-in' );
+					io.unobserve( entry.target );
+				}
+			} );
+		}, { rootMargin: '0px 0px -5% 0px', threshold: 0.1 } );
+		document.querySelectorAll( PHOTOS ).forEach( function ( el ) {
+			if ( el.getBoundingClientRect().top < window.innerHeight ) { return; }
+			el.classList.add( 'vb-reveal' );
+			io.observe( el );
+		} );
 	}
 }() );

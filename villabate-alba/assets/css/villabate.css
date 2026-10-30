@@ -188,6 +188,7 @@ body[data-vb-season]:not([data-vb-season="summer"]) .vb-only-summer { display: n
 .vb-timeline__step { border-top: 1px solid #454A70; padding-top: 20px; display: flex; flex-direction: column; }
 .vb-timeline__step > * { margin-block: 0 10px; }
 .vb-timeline__step > figure, .vb-timeline__step > .vb-slides { order: -1; margin: 0 0 18px; }
+.vb-timeline__step > .vb-slides { margin-bottom: 3px; }
 .vb-timeline__step h3 { font-size: 1.75rem; }
 .vb-timeline__step img { aspect-ratio: 4 / 5; height: auto; display: block; }
 
@@ -264,9 +265,12 @@ body[data-vb-season]:not([data-vb-season="summer"]) .vb-only-summer { display: n
 .vb-footer__copy { font-size: .8125rem; color: #A9A8C2; margin-top: 40px; }
 
 /* ---------- Motion (front end only: html.vb-motion is set in the head, never in the editor) ----------
-   Sections stack like sheets: each one has rounded top corners, overlaps the one before it,
-   and grows to full width as it scrolls in while the one it covers dims. Content rises in. */
-.vb-motion { --vb-sheet: 44px; --vb-ease: cubic-bezier(.16, 1, .3, 1); }
+   Kept deliberately light, following NN/g usability research on scroll animation:
+   - Sections stack like sheets with rounded tops, so each change of section is clear.
+     On wide screens the sheet also eases to full width as you scroll; phones keep it still.
+   - Text, prices, buttons, forms and hours never animate. Only supporting photos fade in,
+     once, in 350ms, on wide screens, and only if they start below the fold. */
+.vb-motion { --vb-sheet: 44px; }
 /* :where() keeps this at zero specificity so each section's own color still wins */
 :where(.vb-motion .vb-section) { position: relative; isolation: isolate; background-color: var(--vb-cream); }
 .vb-motion .vb-section:not(.vb-hero),
@@ -275,24 +279,19 @@ body[data-vb-season]:not([data-vb-season="summer"]) .vb-only-summer { display: n
 .vb-motion .vb-shop { border-block: 0; }
 .vb-motion .vb-section::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: #10132a; opacity: 0; pointer-events: none; z-index: 5; }
 
-/* Until the script has tagged what to animate, hold the page back (with a failsafe if it never runs) */
-.vb-motion:not(.vb-ready) .vb-main { opacity: 0; animation: vb-failsafe 0s 2.5s forwards; }
-@keyframes vb-failsafe { to { opacity: 1; } }
-
-.vb-motion .vb-reveal { opacity: 0; transform: translateY(32px); transition: opacity .9s var(--vb-ease) var(--vb-d, 0s), transform 1.2s var(--vb-ease) var(--vb-d, 0s); }
+.vb-motion .vb-reveal { opacity: 0; transform: translateY(12px); transition: opacity .35s ease-out, transform .35s ease-out; }
 .vb-motion .vb-reveal.is-in { opacity: 1; transform: none; }
-.vb-motion .vb-reveal:is(h1, h2) { transform: translateY(44px); filter: blur(6px); transition-property: opacity, transform, filter; }
-.vb-motion .vb-reveal:is(h1, h2).is-in { filter: none; }
-.vb-motion .vb-reveal img, .vb-motion .vb-reveal.wp-block-image img { transform: scale(1.06); transition: transform 1.8s var(--vb-ease) var(--vb-d, 0s); }
-.vb-motion .vb-reveal.is-in img { transform: none; }
 
-/* Scroll-linked sheets where the browser supports it (Chrome, Edge, Safari 26+); elsewhere the sheets just sit still */
+/* Scroll-linked sheets on wide screens where supported (Chrome, Edge, Safari 26+). It follows the
+   scroll position rather than playing on its own, so it never delays reading. */
 @supports (animation-timeline: view()) {
-	.vb-motion .vb-section:not(.vb-hero), .vb-motion .vb-footer { animation: vb-sheet-in linear both; animation-timeline: view(); animation-range: entry 0% entry 90%; }
-	.vb-motion .vb-section::after { animation: vb-sheet-dim linear both; animation-timeline: view(); animation-range: exit 35% exit 100%; }
+	@media (min-width: 782px) {
+		.vb-motion .vb-section:not(.vb-hero), .vb-motion .vb-footer { animation: vb-sheet-in linear both; animation-timeline: view(); animation-range: entry 0% entry 70%; }
+		.vb-motion .vb-section::after { animation: vb-sheet-dim linear both; animation-timeline: view(); animation-range: exit 50% exit 100%; }
+	}
 }
-@keyframes vb-sheet-in { from { transform: scale(.92); border-radius: calc(var(--vb-sheet) * 1.6) calc(var(--vb-sheet) * 1.6) 0 0; } to { transform: none; } }
-@keyframes vb-sheet-dim { to { opacity: .28; } }
+@keyframes vb-sheet-in { from { transform: scale(.96); } to { transform: none; } }
+@keyframes vb-sheet-dim { to { opacity: .15; } }
 
 /* ---------- Small screens ---------- */
 @media (max-width: 781px) {
