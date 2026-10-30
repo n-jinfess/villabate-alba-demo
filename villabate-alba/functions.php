@@ -141,6 +141,21 @@ function villabate_shop_products() {
 	);
 }
 
+/**
+ * First-visit picks: image, name, one line, and whether it ships or is in store only.
+ * Shown at the top of the homepage sweets section (Shop teaser).
+ */
+function villabate_must_items() {
+	return array(
+		array( 'must-cannoli.jpg', 'Cannoli', 'We fill them when you order, with sheep’s milk ricotta from Sicily.', 'store' ),
+		array( 'must-pistachio.jpg', 'Pistachio cookie', 'Very green and very pistachio.', 'ships' ),
+		array( 'must-lobster-tail.jpg', 'Lobster tail', 'Flaky, full of cream, not too sweet.', 'store' ),
+		array( 'must-sfogliatelle.jpg', 'Sfogliatelle', 'Crisp layers with ricotta inside. We ship them frozen.', 'ships' ),
+		array( 'must-brioche.jpg', 'Brioche con gelato', 'Gelato in a brioche bun, the way they eat it in Sicily.', 'store' ),
+		array( 'must-cartocci.jpg', 'Cartocci', 'Fried dough, rolled in sugar, filled with ricotta.', 'store' ),
+	);
+}
+
 function villabate_shop_notes() {
 	return array(
 		'fall'      => 'Thanksgiving is close, so the turkey cake and trays for the table are up front.',

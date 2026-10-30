@@ -114,10 +114,10 @@ body[data-vb-season]:not([data-vb-season="summer"]) .vb-only-summer { display: n
 /* Badge sits right under the photo, so every badge lines up whatever the text length */
 .vb-must figure { order: 0; }
 .vb-must::after { order: 1; margin-bottom: 10px; }
-.vb-must h3 { order: 2; }
+.vb-must :is(h3, h4) { order: 2; }
 .vb-must p { order: 3; }
 .vb-must figure { display: flex; justify-content: center; margin: 0 0 10px; }
-.vb-must h3 { font-size: 1.3rem; margin: 0 0 6px; }
+.vb-must :is(h3, h4) { font-size: 1.3rem; margin: 0 0 6px; }
 .vb-must p { font-size: .8125rem; color: var(--vb-muted); line-height: 1.45; margin: 0 0 8px; }
 .vb-must::after { display: inline-block; font-size: .75rem; font-weight: 600; padding: 3px 10px; border-radius: 999px; }
 .vb-badge-ships::after { content: "Ships"; background: var(--vb-green); color: #fff; border: 1px solid var(--vb-green); }
@@ -320,6 +320,10 @@ body[data-vb-season]:not([data-vb-season="summer"]) .vb-only-summer { display: n
 @keyframes vb-sheet-dim { to { opacity: .15; } }
 
 /* ---------- Ordering pages (Shop, Custom cakes) and the homepage shop teaser ---------- */
+.vb-subhead-script { margin-top: 36px; font-size: clamp(1.75rem, 2.6vw, 2.25rem); }
+.vb-subhead { font-size: 1.5rem; margin: 0 0 18px; }
+.vb-subhead-script + .vb-subhead { margin-top: 0; }
+.vb-must-grid + .vb-subhead { margin-top: 44px; }
 .vb-page-intro { padding-bottom: clamp(32px, 4vw, 48px); }
 .vb-page-intro h1 { margin: 0 0 12px; font-size: clamp(2.5rem, 5vw, 3.75rem); }
 .vb-page-intro .vb-lede { max-width: var(--wp--style--global--content-size); } /* full column width, so the constrained layout keeps it left-aligned */
@@ -381,7 +385,7 @@ body { overflow-x: clip; -webkit-tap-highlight-color: transparent; }
 	/* First visit: three small rounds across instead of six stacked */
 	.vb-must-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 18px 10px; }
 	.vb-must .vb-round img { width: 84px; height: 84px; outline-width: 4px; outline-offset: -7px; }
-	.vb-must h3 { font-size: 1rem; }
+	.vb-must :is(h3, h4) { font-size: 1rem; }
 	.vb-must p { display: none; }
 	.vb-must::after { font-size: .625rem; padding: 2px 7px; }
 

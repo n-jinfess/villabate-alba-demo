@@ -3,11 +3,12 @@
  * Title: Shop teaser (homepage)
  * Slug: villabate/shop-teaser
  * Categories: villabate
- * Description: Four seasonal picks with prices and a link to the Shop page. Nothing is bought here; the full shop with filters and Add buttons is the Shop page.
+ * Description: The homepage sweets section: six first-visit picks, four seasonal picks with prices, and a link to the Shop page. Nothing is bought here; the full shop with filters and Add buttons is the Shop page.
  */
 $villabate_specials = villabate_shop_specials();
 $villabate_products = villabate_shop_products();
 $villabate_notes    = villabate_shop_notes();
+$villabate_items    = villabate_must_items();
 ?>
 <!-- wp:group {"tagName":"section","anchor":"shop","className":"vb-section vb-shop vb-shop--teaser","layout":{"type":"constrained"}} -->
 <section id="shop" class="wp-block-group vb-section vb-shop vb-shop--teaser"><!-- wp:group {"className":"vb-shop__head","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"bottom"}} -->
@@ -32,6 +33,34 @@ $villabate_notes    = villabate_shop_notes();
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group -->
+
+<!-- wp:paragraph {"className":"vb-script vb-subhead-script"} -->
+<p class="vb-script vb-subhead-script">Prima volta?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"className":"vb-subhead"} -->
+<h3 class="wp-block-heading vb-subhead">First visit? Start with these.</h3>
+<!-- /wp:heading -->
+
+<!-- wp:group {"className":"vb-must-grid","layout":{"type":"grid","minimumColumnWidth":"150px"}} -->
+<div class="wp-block-group vb-must-grid"><?php foreach ( $villabate_items as $villabate_item ) : ?><!-- wp:group {"className":"vb-must vb-badge-<?php echo esc_attr( $villabate_item[3] ); ?>","layout":{"type":"default"}} -->
+<div class="wp-block-group vb-must vb-badge-<?php echo esc_attr( $villabate_item[3] ); ?>"><!-- wp:image {"className":"vb-round"} -->
+<figure class="wp-block-image vb-round"><img src="<?php echo villabate_img( $villabate_item[0] ); ?>" alt="<?php echo esc_attr( $villabate_item[1] ); ?>"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading"><?php echo esc_html( $villabate_item[1] ); ?></h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p><?php echo esc_html( $villabate_item[2] ); ?></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --><?php endforeach; ?></div>
+<!-- /wp:group -->
+
+<!-- wp:heading {"level":3,"className":"vb-subhead"} -->
+<h3 class="wp-block-heading vb-subhead">In season now</h3>
+<!-- /wp:heading -->
 
 <!-- wp:group {"className":"vb-shop-grid vb-shop-grid--teaser","layout":{"type":"grid","minimumColumnWidth":"200px"}} -->
 <div class="wp-block-group vb-shop-grid vb-shop-grid--teaser"><?php foreach ( $villabate_specials as $villabate_sp ) : ?><!-- wp:group {"className":"vb-product vb-product--feature vb-only-<?php echo esc_attr( $villabate_sp[0] ); ?> vb-in-<?php echo esc_attr( $villabate_sp[0] ); ?>","layout":{"type":"default"}} -->

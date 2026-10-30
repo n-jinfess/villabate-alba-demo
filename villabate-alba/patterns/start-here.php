@@ -3,16 +3,9 @@
  * Title: First visit, start here
  * Slug: villabate/start-here
  * Categories: villabate
- * Description: Six must-try items in round photo frames. Add the class vb-badge-ships or vb-badge-store to an item to show its badge.
+ * Description: Six must-try items in round photo frames, as a standalone section. The homepage shows them inside the sweets section instead (Shop teaser). Add the class vb-badge-ships or vb-badge-store to an item to show its badge.
  */
-$villabate_items = array(
-	array( 'must-cannoli.jpg', 'Cannoli', 'We fill them when you order, with sheep’s milk ricotta from Sicily.', 'store' ),
-	array( 'must-pistachio.jpg', 'Pistachio cookie', 'Very green and very pistachio.', 'ships' ),
-	array( 'must-lobster-tail.jpg', 'Lobster tail', 'Flaky, full of cream, not too sweet.', 'store' ),
-	array( 'must-sfogliatelle.jpg', 'Sfogliatelle', 'Crisp layers with ricotta inside. We ship them frozen.', 'ships' ),
-	array( 'must-brioche.jpg', 'Brioche con gelato', 'Gelato in a brioche bun, the way they eat it in Sicily.', 'store' ),
-	array( 'must-cartocci.jpg', 'Cartocci', 'Fried dough, rolled in sugar, filled with ricotta.', 'store' ),
-);
+$villabate_items = villabate_must_items();
 ?>
 <!-- wp:group {"tagName":"section","className":"vb-section vb-start","layout":{"type":"constrained"}} -->
 <section class="wp-block-group vb-section vb-start"><!-- wp:group {"className":"vb-framed","layout":{"type":"default"}} -->
