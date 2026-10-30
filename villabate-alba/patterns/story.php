@@ -7,7 +7,7 @@
  */
 $villabate_steps = array(
 	array( 'Villabate, Sicily', 'Angelo Alaimo and his son Emanuele bake bread for the locals in their small Sicilian hometown.', 'sicily-flag.jpg', 'The flag of Sicily: the Trinacria on red and yellow' ),
-	array( '1979, Brooklyn', 'After years as breadmakers in bakeries all over Brooklyn, they open Villabate on 18th Avenue.', 'story-bensonhurst.jpg', 'The original Villabate storefront on 18th Avenue in the early days' ),
+	array( '1979, Brooklyn', 'After years as breadmakers in bakeries all over Brooklyn, they open Villabate on 18th Avenue.', 'story-founder.jpg', 'A Villabate baker in the kitchen holding a tray of cassata cakes' ),
 	array( 'Today', 'Three generations in, Emanuele, Lina, Angela, Emanuele Jr. and Anthony still run it, and give back to the neighborhood that made it.', 'story-today.jpg', 'The Alaimo family and their bakers in blue Villabate Alba shirts behind a table of decorated cakes' ),
 	array( 'The owners', 'Angela Alaimo and her daughter, Alessandra Peralta, run the shop today.', 'story-owners.jpg', 'Owners Angela Alaimo and her daughter Alessandra Peralta behind the counter' ),
 );

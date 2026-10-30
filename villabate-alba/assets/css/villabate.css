@@ -182,9 +182,12 @@ body[data-vb-season]:not([data-vb-season="summer"]) .vb-only-summer { display: n
 .vb-story h2 em, .vb-story h3 em { color: var(--vb-lemon); }
 .vb-story a { color: var(--vb-cream); }
 .vb-timeline { gap: 28px; margin-top: 40px; }
-.vb-timeline__step { border-top: 1px solid #454A70; padding-top: 20px; }
+/* Photo sits on top of each step at one shared size, so the four arches line up */
+.vb-timeline__step { border-top: 1px solid #454A70; padding-top: 20px; display: flex; flex-direction: column; }
+.vb-timeline__step > * { margin-block: 0 10px; }
+.vb-timeline__step figure { order: -1; margin: 0 0 18px; }
 .vb-timeline__step h3 { font-size: 1.75rem; }
-.vb-timeline__step img { aspect-ratio: 3 / 2; }
+.vb-timeline__step img { aspect-ratio: 4 / 5; height: auto; }
 .vb-euro { border-top: 1px solid #454A70; padding-top: 40px; margin-top: 48px; gap: 32px; }
 .vb-euro img { height: 440px; border-color: var(--vb-parchment); }
 
