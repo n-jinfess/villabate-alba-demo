@@ -274,6 +274,7 @@ body[data-vb-season]:not([data-vb-season="summer"]) .vb-only-summer { display: n
 .vb-motion .vb-section:not(.vb-hero),
 .vb-motion .vb-footer { border-radius: var(--vb-sheet) var(--vb-sheet) 0 0; margin-top: calc(-1 * var(--vb-sheet)); box-shadow: 0 -22px 44px -18px rgba(31, 35, 64, .28); transform-origin: 50% 0; }
 .vb-motion .vb-footer { position: relative; overflow: hidden; }
+.vb-motion .vb-tiles--tall:has(+ .vb-footer) { display: none; } /* the footer sheet replaces this band */
 .vb-motion .vb-shop { border-block: 0; }
 .vb-motion .vb-section::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: #10132a; opacity: 0; pointer-events: none; z-index: 5; }
 
