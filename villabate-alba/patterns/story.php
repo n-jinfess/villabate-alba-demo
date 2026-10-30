@@ -5,11 +5,18 @@
  * Categories: villabate
  * Description: Family timeline from Villabate to 18th Avenue, plus the 2021 Euro celebration.
  */
+// Each step: title, text, then one or more photos as file => alt text. Two or more photos become a slideshow.
 $villabate_steps = array(
-	array( 'Villabate, Sicily', 'Angelo Alaimo and his son Emanuele bake bread for the locals in their small Sicilian hometown.', 'sicily-flag.jpg', 'The flag of Sicily: the Trinacria on red and yellow' ),
-	array( '1979, Brooklyn', 'After years as breadmakers in bakeries all over Brooklyn, they open Villabate on 18th Avenue.', 'story-founder.jpg', 'A Villabate baker in the kitchen holding a tray of cassata cakes' ),
-	array( 'Today', 'Three generations in, Emanuele, Lina, Angela, Emanuele Jr. and Anthony still run it, and give back to the neighborhood that made it.', 'story-today.jpg', 'The Alaimo family and their bakers in blue Villabate Alba shirts behind a table of decorated cakes' ),
-	array( 'The owners', 'Angela Alaimo and her daughter, Alessandra Peralta, run the shop today.', 'story-owners.jpg', 'Owners Angela Alaimo and her daughter Alessandra Peralta behind the counter' ),
+	array( 'Villabate, Sicily', 'The family bakes bread for the locals in their small Sicilian hometown.', array( 'sicily-flag.jpg' => 'The flag of Sicily: the Trinacria on red and yellow' ) ),
+	array( '1979, Brooklyn', 'After years as breadmakers in bakeries all over Brooklyn, they open Villabate on 18th Avenue.', array( 'story-founder.jpg' => 'A Villabate baker in the kitchen holding a tray of cassata cakes' ) ),
+	array(
+		'Today',
+		'Three generations later, the family still runs it, and gives back to the neighborhood that made it.',
+		array(
+			'story-today.jpg'  => 'The Villabate Alba team in blue shirts behind a table of decorated cakes',
+			'story-owners.jpg' => 'Two of the family behind the counter at Villabate Alba',
+		),
+	),
 );
 ?>
 <!-- wp:group {"tagName":"section","anchor":"story","className":"vb-section vb-story","layout":{"type":"constrained"}} -->
@@ -41,10 +48,16 @@ $villabate_steps = array(
 
 <!-- wp:paragraph {"className":"vb-muted-light"} -->
 <p class="vb-muted-light"><?php echo esc_html( $villabate_s[1] ); ?></p>
-<!-- /wp:paragraph --><?php if ( $villabate_s[2] ) : ?>
+<!-- /wp:paragraph --><?php if ( count( $villabate_s[2] ) > 1 ) : ?>
+
+<!-- wp:group {"className":"vb-slides","layout":{"type":"default"}} -->
+<div class="wp-block-group vb-slides"><?php foreach ( $villabate_s[2] as $villabate_file => $villabate_alt ) : ?><!-- wp:image {"className":"vb-arch"} -->
+<figure class="wp-block-image vb-arch"><img src="<?php echo villabate_img( $villabate_file ); ?>" alt="<?php echo esc_attr( $villabate_alt ); ?>"/></figure>
+<!-- /wp:image --><?php endforeach; ?></div>
+<!-- /wp:group --><?php else : ?>
 
 <!-- wp:image {"className":"vb-arch"} -->
-<figure class="wp-block-image vb-arch"><img src="<?php echo villabate_img( $villabate_s[2] ); ?>" alt="<?php echo esc_attr( $villabate_s[3] ); ?>"/></figure>
+<figure class="wp-block-image vb-arch"><img src="<?php echo villabate_img( key( $villabate_s[2] ) ); ?>" alt="<?php echo esc_attr( current( $villabate_s[2] ) ); ?>"/></figure>
 <!-- /wp:image --><?php endif; ?></div>
 <!-- /wp:group --><?php endforeach; ?></div>
 <!-- /wp:group -->

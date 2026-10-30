@@ -146,6 +146,29 @@
 		start();
 	} );
 
+	/* Photo slideshows (the Today step in Our story): cross-fade every few seconds */
+	document.querySelectorAll( '.vb-slides' ).forEach( function ( box ) {
+		var slides = Array.prototype.slice.call( box.querySelectorAll( ':scope > figure' ) );
+		if ( slides.length < 2 ) { return; }
+		var dots = document.createElement( 'div' );
+		dots.className = 'vb-dots';
+		dots.setAttribute( 'aria-hidden', 'true' );
+		slides.forEach( function () { dots.appendChild( document.createElement( 'span' ) ); } );
+		box.appendChild( dots );
+
+		var current = 0;
+		var show = function ( n ) {
+			slides.forEach( function ( s, k ) {
+				s.classList.toggle( 'is-active', k === n );
+				s.setAttribute( 'aria-hidden', k === n ? 'false' : 'true' );
+			} );
+			Array.prototype.forEach.call( dots.children, function ( d, k ) { d.classList.toggle( 'is-active', k === n ); } );
+		};
+		box.classList.add( 'is-ready' );
+		show( 0 );
+		window.setInterval( function () { current = ( current + 1 ) % slides.length; show( current ); }, reduce ? 9000 : 4000 );
+	} );
+
 	/* Scroll motion: each block rises in as it reaches the viewport, cards in a row one after another */
 	var root = document.documentElement;
 	if ( root.classList.contains( 'vb-motion' ) ) {
