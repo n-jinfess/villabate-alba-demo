@@ -179,6 +179,7 @@ body[data-vb-season]:not([data-vb-season="summer"]) .vb-only-summer { display: n
 .vb-flavors__title { font-size: 1.25rem; margin: 28px 0 10px; }
 .vb-cake-order > .wp-block-columns { gap: 48px; align-items: flex-start; }
 .vb-events-page { background: var(--vb-parchment); }
+.vb-events-page > .wp-block-columns { gap: 56px; }
 .vb-cakes { background: var(--vb-blush); }
 .vb-cakes .vb-arch--framed img { aspect-ratio: 1 / 1; }
 .vb-steps { border-top: 1px solid #DCB9A3; }
@@ -308,6 +309,7 @@ body[data-vb-season]:not([data-vb-season="summer"]) .vb-only-summer { display: n
 /* ---------- Ordering pages (Shop, Custom cakes) and the homepage shop teaser ---------- */
 .vb-page-intro { padding-bottom: clamp(32px, 4vw, 48px); }
 .vb-page-intro h1 { margin: 0 0 12px; font-size: clamp(2.5rem, 5vw, 3.75rem); }
+.vb-page-intro .vb-lede { max-width: none; } /* constrained layout would otherwise center the narrow lede */
 .vb-page-intro h1 em { color: var(--vb-green); }
 .vb-jump { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
 .vb-jump a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid #C9B999; color: var(--vb-ink); text-decoration: none; font-size: .9375rem; }
@@ -315,7 +317,7 @@ body[data-vb-season]:not([data-vb-season="summer"]) .vb-only-summer { display: n
 .vb-shop--teaser .vb-product a { color: inherit; text-decoration: none; }
 .vb-shop--teaser .vb-product figure a { display: block; }
 .vb-shop--teaser .vb-product .vb-price { margin-top: auto !important; }
-.vb-shop-grid--teaser { grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); }
+.vb-shop-grid--teaser { grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)) !important; }
 
 /* ---------- Small screens ---------- */
 @media (max-width: 781px) {
