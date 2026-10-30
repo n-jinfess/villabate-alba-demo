@@ -3,7 +3,7 @@
  * Title: Merch (la bottega)
  * Slug: villabate/merch
  * Categories: villabate
- * Description: Carretto and storefront apparel (homepage). Links to the merch section of the Shop page, where the Buy buttons are.
+ * Description: Carretto and storefront apparel (homepage). Photos only; buying happens through the Shop page.
  */
 $villabate_merch = villabate_merch_items();
 ?>
@@ -22,11 +22,9 @@ $villabate_merch = villabate_merch_items();
 <p class="vb-muted">Our tees and hoodies have the Sicilian carretto on the back. That’s the painted donkey cart from back home.</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo villabate_page_url( 'shop', 'merch' ); ?>">Shop merch →</a></div>
-<!-- /wp:button --></div>
-<!-- /wp:buttons --></div>
+<!-- wp:paragraph {"className":"vb-muted"} -->
+<p class="vb-muted">In the shop on 18th Avenue, and on our Shop page.</p>
+<!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center"} -->

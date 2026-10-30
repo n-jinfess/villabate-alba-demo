@@ -49,7 +49,7 @@
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
-<p><strong>Weddings, feasts and catering halls</strong><br>Wedding cakes, pastry tables, cookie trays. We’ve even built a cartocci tower with fresh roses. <a href="<?php echo villabate_page_url( 'custom-cakes', 'events' ); ?>">Plan an event →</a></p>
+<p><strong>Weddings, feasts and catering halls</strong><br>Wedding cakes, pastry tables, cookie trays. We’ve even built a cartocci tower with fresh roses.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>

@@ -3,7 +3,7 @@
  * Title: Shop, full (sorted by season)
  * Slug: villabate/shop
  * Categories: villabate
- * Description: Product cards that sort themselves by season. On each product card, add classes to its group: vb-in-fall, vb-in-christmas, vb-in-spring, vb-in-mothers, vb-in-fathers, vb-in-summer (in season) and vb-cat-cookies, vb-cat-pastry, vb-cat-marzipan, vb-cat-trays (filter). Seasonal specials use vb-only-SEASON so they appear only in that season. Point each Add button at the product page in the online store. Used on the Shop page; the homepage uses the Shop teaser. Product data lives in villabate_shop_products() in functions.php.
+ * Description: Product cards that sort themselves by season. On each product card, add classes to its group: vb-in-fall, vb-in-christmas, vb-in-spring, vb-in-mothers, vb-in-fathers, vb-in-summer (in season) and vb-cat-cookies, vb-cat-pastry, vb-cat-marzipan, vb-cat-trays (filter). Seasonal specials use vb-only-SEASON so they appear only in that season. When the online store is connected, add a Buttons block to each card's buy row and point it at the product page. Used on the Shop page; the homepage uses the Shop teaser. Product data lives in villabate_shop_products() in functions.php.
  */
 $villabate_specials = villabate_shop_specials();
 $villabate_products = villabate_shop_products();
@@ -23,7 +23,10 @@ $villabate_notes    = villabate_shop_notes();
 <!-- wp:paragraph {"className":"vb-muted vb-only-<?php echo esc_attr( $villabate_season ); ?>"} -->
 <p class="vb-muted vb-only-<?php echo esc_attr( $villabate_season ); ?>"><?php echo esc_html( $villabate_note ); ?></p>
 <!-- /wp:paragraph -->
-<?php endforeach; ?></div>
+<?php endforeach; ?>
+<!-- wp:paragraph {"className":"vb-order-line"} -->
+<p class="vb-order-line">To order, call <a href="tel:+17183318430">(718) 331-8430</a> or stop by 7001 18th Avenue. Holiday boxes: pick a pickup time below.</p>
+<!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:html -->
@@ -55,13 +58,7 @@ $villabate_notes    = villabate_shop_notes();
 <!-- wp:group {"className":"vb-product__buy","layout":{"type":"flex","justifyContent":"space-between"}} -->
 <div class="wp-block-group vb-product__buy"><!-- wp:paragraph {"className":"vb-price"} -->
 <p class="vb-price">[PRICE]</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="#holiday">Pre-order</a></div>
-<!-- /wp:button --></div>
-<!-- /wp:buttons --></div>
+<!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --><?php endforeach; ?><?php foreach ( $villabate_products as $villabate_p ) : ?><!-- wp:group {"className":"vb-product <?php echo esc_attr( $villabate_p[4] ); ?>","layout":{"type":"default"}} -->
 <div class="wp-block-group vb-product <?php echo esc_attr( $villabate_p[4] ); ?>"><!-- wp:image -->
@@ -79,13 +76,7 @@ $villabate_notes    = villabate_shop_notes();
 <!-- wp:group {"className":"vb-product__buy","layout":{"type":"flex","justifyContent":"space-between"}} -->
 <div class="wp-block-group vb-product__buy"><!-- wp:paragraph {"className":"vb-price"} -->
 <p class="vb-price"><?php echo esc_html( $villabate_p[3] ); ?></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="#">Add</a></div>
-<!-- /wp:button --></div>
-<!-- /wp:buttons --></div>
+<!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --><?php endforeach; ?></div>
 <!-- /wp:group --></section>

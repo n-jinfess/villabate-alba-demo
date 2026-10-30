@@ -53,17 +53,11 @@
 <!-- /wp:image -->
 
 <!-- wp:navigation {"overlayMenu":"mobile","className":"vb-nav","layout":{"type":"flex","justifyContent":"center"}} -->
-<!-- wp:navigation-link {"label":"Shop","url":"<?php echo villabate_page_url( 'shop' ); ?>","kind":"custom","className":"vb-shop-link"} /-->
-
 <!-- wp:navigation-link {"label":"Custom cakes","url":"<?php echo villabate_page_url( 'custom-cakes' ); ?>","kind":"custom"} /-->
-
-<!-- wp:navigation-link {"label":"Menu","url":"<?php echo villabate_home_url( 'menu' ); ?>","kind":"custom"} /-->
 
 <!-- wp:navigation-link {"label":"Our story","url":"<?php echo villabate_home_url( 'story' ); ?>","kind":"custom"} /-->
 
 <!-- wp:navigation-link {"label":"Visit","url":"<?php echo villabate_home_url( 'visit' ); ?>","kind":"custom"} /-->
-
-<!-- wp:navigation-link {"label":"Merch","url":"<?php echo villabate_page_url( 'shop', 'merch' ); ?>","kind":"custom"} /-->
 <!-- /wp:navigation -->
 
 <!-- wp:buttons {"className":"vb-header__cta"} -->

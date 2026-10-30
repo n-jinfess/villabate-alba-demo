@@ -56,7 +56,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><a href="<?php echo villabate_page_url( 'shop' ); ?>">Shop online</a><br><a href="<?php echo villabate_page_url( 'custom-cakes' ); ?>">Custom cakes</a><br><a href="<?php echo villabate_page_url( 'shop', 'holiday' ); ?>">Holiday pre-orders</a><br><a href="<?php echo villabate_page_url( 'shop', 'merch' ); ?>">Merch</a></p>
+<p><a href="<?php echo villabate_page_url( 'shop' ); ?>">Order online</a><br><a href="<?php echo villabate_page_url( 'custom-cakes' ); ?>">Custom cakes</a><br><a href="tel:+17183318430">(718) 331-8430</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
@@ -66,7 +66,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><a href="<?php echo villabate_home_url( 'story' ); ?>">Our story</a><br><a href="<?php echo villabate_home_url( 'gallery' ); ?>">Gallery</a><br><a href="<?php echo villabate_home_url( 'reviews' ); ?>">Reviews</a><br><a href="<?php echo villabate_home_url( 'visit' ); ?>">Visit</a></p>
+<p><a href="<?php echo villabate_home_url( 'story' ); ?>">Our story</a><br><a href="<?php echo villabate_home_url( 'visit' ); ?>">Visit and hours</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 

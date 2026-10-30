@@ -64,7 +64,7 @@ These parts are placeholders in the theme. Each one needs a service or plugin:
 
 | Part | What to use |
 |---|---|
-| Shop "Add" buttons | Link each one to its product page in the current Shopify store, or use Shopify's Buy Button. |
+| Shop buy buttons | Cards show price only until the online store is connected. Then add a Buttons block to each card's buy row (Shop pattern) linking to its product page, or use Shopify's Buy Button. |
 | Holiday pre-order form | Shopify local pickup with a scheduling app, or WooCommerce with a pickup-date plugin. Replace the form in the Holiday pre-order form pattern (Shop page). |
 | Instagram grid | An Instagram feed plugin (for example Smash Balloon). Replace the photo grid in the Instagram pattern with the plugin's block. |
 | Reviews | Optional: a Google Reviews plugin to replace the hand-picked review cards. |

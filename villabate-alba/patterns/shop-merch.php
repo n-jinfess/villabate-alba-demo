@@ -42,13 +42,7 @@ $villabate_merch = villabate_merch_items();
 
 <!-- wp:paragraph {"className":"vb-muted"} -->
 <p class="vb-muted"><?php echo esc_html( $villabate_m[2] ); ?> · <span class="vb-price">[PRICE]</span></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:buttons {"className":"vb-product__buy"} -->
-<div class="wp-block-buttons vb-product__buy"><!-- wp:button {"className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( VILLABATE_MERCH_STORE ); ?>">Buy</a></div>
-<!-- /wp:button --></div>
-<!-- /wp:buttons --></div>
+<!-- /wp:paragraph --></div>
 <!-- /wp:group --><?php endforeach; ?></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>

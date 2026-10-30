@@ -36,11 +36,11 @@ $villabate_notes    = villabate_shop_notes();
 <!-- wp:group {"className":"vb-shop-grid vb-shop-grid--teaser","layout":{"type":"grid","minimumColumnWidth":"200px"}} -->
 <div class="wp-block-group vb-shop-grid vb-shop-grid--teaser"><?php foreach ( $villabate_specials as $villabate_sp ) : ?><!-- wp:group {"className":"vb-product vb-product--feature vb-only-<?php echo esc_attr( $villabate_sp[0] ); ?> vb-in-<?php echo esc_attr( $villabate_sp[0] ); ?>","layout":{"type":"default"}} -->
 <div class="wp-block-group vb-product vb-product--feature vb-only-<?php echo esc_attr( $villabate_sp[0] ); ?> vb-in-<?php echo esc_attr( $villabate_sp[0] ); ?>"><!-- wp:image -->
-<figure class="wp-block-image"><a href="<?php echo villabate_page_url( 'shop', 'holiday' ); ?>"><img src="<?php echo villabate_img( $villabate_sp[1] ); ?>" alt="<?php echo esc_attr( $villabate_sp[2] ); ?>"/></a></figure>
+<figure class="wp-block-image"><img src="<?php echo villabate_img( $villabate_sp[1] ); ?>" alt="<?php echo esc_attr( $villabate_sp[2] ); ?>"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading"><a href="<?php echo villabate_page_url( 'shop', 'holiday' ); ?>"><?php echo esc_html( $villabate_sp[2] ); ?></a></h3>
+<h3 class="wp-block-heading"><?php echo esc_html( $villabate_sp[2] ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"className":"vb-muted"} -->
@@ -48,11 +48,11 @@ $villabate_notes    = villabate_shop_notes();
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --><?php endforeach; ?><?php foreach ( $villabate_products as $villabate_p ) : ?><!-- wp:group {"className":"vb-product <?php echo esc_attr( $villabate_p[4] ); ?>","layout":{"type":"default"}} -->
 <div class="wp-block-group vb-product <?php echo esc_attr( $villabate_p[4] ); ?>"><!-- wp:image -->
-<figure class="wp-block-image"><a href="<?php echo villabate_page_url( 'shop' ); ?>"><img src="<?php echo villabate_img( $villabate_p[0] ); ?>" alt="<?php echo esc_attr( $villabate_p[1] ); ?>"/></a></figure>
+<figure class="wp-block-image"><img src="<?php echo villabate_img( $villabate_p[0] ); ?>" alt="<?php echo esc_attr( $villabate_p[1] ); ?>"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading"><a href="<?php echo villabate_page_url( 'shop' ); ?>"><?php echo esc_html( $villabate_p[1] ); ?></a></h3>
+<h3 class="wp-block-heading"><?php echo esc_html( $villabate_p[1] ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"className":"vb-price"} -->

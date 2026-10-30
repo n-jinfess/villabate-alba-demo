@@ -311,11 +311,8 @@ body[data-vb-season]:not([data-vb-season="summer"]) .vb-only-summer { display: n
 .vb-page-intro h1 { margin: 0 0 12px; font-size: clamp(2.5rem, 5vw, 3.75rem); }
 .vb-page-intro .vb-lede { max-width: none; } /* constrained layout would otherwise center the narrow lede */
 .vb-page-intro h1 em { color: var(--vb-green); }
-.vb-jump { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
-.vb-jump a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid #C9B999; color: var(--vb-ink); text-decoration: none; font-size: .9375rem; }
-.vb-jump a:hover { border-color: var(--vb-green); color: var(--vb-green); }
-.vb-shop--teaser .vb-product a { color: inherit; text-decoration: none; }
-.vb-shop--teaser .vb-product figure a { display: block; }
+.vb-order-line { flex-basis: 100%; margin: 4px 0 0; font-size: .9375rem; color: var(--vb-muted); }
+.vb-order-line a { color: var(--vb-green); font-weight: 600; }
 .vb-shop--teaser .vb-product .vb-price { margin-top: auto !important; }
 .vb-shop-grid--teaser { grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)) !important; }
 
@@ -365,9 +362,6 @@ body { overflow-x: clip; -webkit-tap-highlight-color: transparent; }
 	.vb-preorder select, .vb-news input, .vb-preorder input, .vb-preorder textarea { font-size: 16px; }
 	.vb-rotator.is-ready { min-height: 10.5rem; }
 	.vb-form-row { grid-template-columns: 1fr; }
-	.vb-jump { flex-wrap: nowrap; overflow-x: auto; margin-inline: -18px !important; padding-inline: 18px; scrollbar-width: none; }
-	.vb-jump::-webkit-scrollbar { display: none; }
-	.vb-jump a { flex: 0 0 auto; }
 	.vb-motion { --vb-sheet: 28px; }
 
 	/* First visit: three small rounds across instead of six stacked */
