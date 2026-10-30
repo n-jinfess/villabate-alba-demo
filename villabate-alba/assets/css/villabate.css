@@ -183,16 +183,19 @@ body[data-vb-season]:not([data-vb-season="summer"]) .vb-only-summer { display: n
 .vb-story h2 em, .vb-story h3 em { color: var(--vb-lemon); }
 .vb-story a { color: var(--vb-cream); }
 .vb-timeline { gap: 28px; margin-top: 40px; }
+@media (min-width: 601px) { .vb-timeline { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; } }
 /* Photo sits on top of each step at one shared size, so the arches line up */
 .vb-timeline__step { border-top: 1px solid #454A70; padding-top: 20px; display: flex; flex-direction: column; }
 .vb-timeline__step > * { margin-block: 0 10px; }
 .vb-timeline__step > figure, .vb-timeline__step > .vb-slides { order: -1; margin: 0 0 18px; }
 .vb-timeline__step h3 { font-size: 1.75rem; }
-.vb-timeline__step img { aspect-ratio: 4 / 5; height: auto; }
+.vb-timeline__step img { aspect-ratio: 4 / 5; height: auto; display: block; }
 
 /* Slideshow in a story step: photos stack and cross-fade; without the script only the first shows */
-.vb-slides { display: grid; position: relative; }
-.vb-slides > figure { grid-area: 1 / 1; margin: 0 !important; transition: opacity 1.2s ease; }
+/* The frame holds the 4:5 arch itself, so a slideshow step lines up with single-photo steps */
+.vb-slides { position: relative; aspect-ratio: 4 / 5; }
+.vb-slides > figure { position: absolute; inset: 0; margin: 0 !important; transition: opacity 1.2s ease; }
+.vb-slides > figure img { width: 100%; height: 100%; object-fit: cover; }
 .vb-slides:not(.is-ready) > figure + figure, .vb-slides.is-ready > figure:not(.is-active) { opacity: 0; }
 .vb-slides .vb-dots { position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%); margin: 0; }
 .vb-slides .vb-dots span { background: rgba(255, 253, 248, .6); }
