@@ -56,7 +56,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><a href="<?php echo villabate_page_url( 'shop' ); ?>">Order online</a><br><a href="<?php echo villabate_page_url( 'custom-cakes' ); ?>">Custom cakes</a><br><a href="tel:+17183318430">(718) 331-8430</a></p>
+<p><a href="<?php echo esc_url( VILLABATE_SHIP_STORE ); ?>">Ship nationwide ↗</a><br><a href="<?php echo villabate_page_url( 'custom-cakes' ); ?>">Custom cakes</a><br><a href="tel:+17183318430">(718) 331-8430</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
@@ -76,7 +76,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><a href="https://www.instagram.com/villabatealba/">Instagram</a><br><a href="https://www.facebook.com/VillabateAlba/">Facebook</a><br><a href="https://www.tiktok.com/@villabatealba">TikTok</a><br><a href="https://www.yelp.com/">Yelp</a></p>
+<p><a href="https://www.instagram.com/villabatealba/">Instagram</a><br><a href="https://www.facebook.com/VillabateAlba/">Facebook</a><br><a href="https://www.tiktok.com/@villabatealba">TikTok</a><br><a href="https://www.yelp.com/biz/villabate-alba-brooklyn">Yelp</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->

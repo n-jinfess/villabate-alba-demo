@@ -3,7 +3,7 @@
  * Title: Shop teaser (homepage)
  * Slug: villabate/shop-teaser
  * Categories: villabate
- * Description: The homepage sweets section: six first-visit picks, four seasonal picks with prices, and a link to the Shop page. Nothing is bought here; the full shop with filters and Add buttons is the Shop page.
+ * Description: The homepage sweets section: six first-visit picks, four seasonal picks with prices, and one button to the bakery's Shopify store for nationwide shipping.
  */
 $villabate_specials = villabate_shop_specials();
 $villabate_products = villabate_shop_products();
@@ -29,7 +29,7 @@ $villabate_items    = villabate_must_items();
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo villabate_page_url( 'shop' ); ?>">Shop all sweets →</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( VILLABATE_SHIP_STORE ); ?>">Ship a box ↗</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group -->

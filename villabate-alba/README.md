@@ -8,22 +8,24 @@ A block theme. No page builder needed, and everything is editable in the normal 
 2. Upload `villabate-alba.zip` and click **Activate**.
 3. Go to **Settings > Reading**. Set "Your homepage displays" to **A static page** and pick (or create) a page called Home.
 4. The homepage loads with every section in place.
-5. Go to **Settings > Permalinks** and pick **Post name**, so the ordering pages live at `/shop/` and `/custom-cakes/`.
+5. Go to **Settings > Permalinks** and pick **Post name**, so the Custom cakes page lives at `/custom-cakes/`.
 
 Needs WordPress 6.4 or newer.
 
-## Pages
+## Pages and ordering
 
-The homepage tells the story and advertises what you can order. Ordering happens on two pages of their own, which the theme creates on activation:
+The homepage is one long page; the only other page is **Custom cakes** (slug `custom-cakes`, template `templates/page-custom-cakes.html`), which the theme creates on activation.
 
-| Page | Slug | Template | What's on it |
-|---|---|---|---|
-| Shop | `shop` | `templates/page-shop.html` | Full shop with season sorting and filters, the holiday pre-order form, and merch with Buy buttons |
-| Custom cakes | `custom-cakes` | `templates/page-custom-cakes.html` | Ordering steps, flavors and fillings, the cake request form, weddings and events |
+Every order goes somewhere that already works:
 
-On the homepage, the shop is a four-card seasonal teaser, the holiday section has a "Choose a pickup time" card instead of the form, and the merch and cake sections link to these pages. Menu links to homepage sections use the full homepage address, so they work from every page.
+| Customer wants to | Where the site sends them |
+|---|---|
+| Ship cookies and pastry | The bakery's Shopify store (`VILLABATE_SHIP_STORE` in `functions.php`) |
+| Pick up in Brooklyn, or holiday orders | Phone, (718) 331-8430 |
+| A custom cake | The Custom cakes page (request form) |
+| Merch | Neighborhood Spot's Villabate Alba collection (`VILLABATE_MERCH_STORE`) |
 
-Product and merch data live in `functions.php` (`villabate_shop_products()`, `villabate_shop_specials()`, `villabate_merch_items()`), so the teaser and the full shop never disagree. The merch store address is `VILLABATE_MERCH_STORE`.
+The header has three links (Custom cakes, Our story, Visit) and one **Order** button that opens those two choices. Each homepage section has at most one button.
 
 ## Editing content
 
@@ -48,7 +50,7 @@ The site picks a season from today's date:
 To preview a season, add `?season=christmas` to the URL. The other options are `fall`, `spring`, `mothers`, `fathers` and `summer`.
 
 - **Slide-in card.** One message per season, set in the Header pattern. It slides in from the right after a second, and stays hidden for the rest of the visit once closed. Edit the wording there.
-- **Seasonal shop.** In the Shop pattern, each product card has classes that control the sorting:
+- **Seasonal shop.** In the Shop teaser pattern (homepage sweets), each product card has classes that control the sorting:
   - `vb-in-fall`, `vb-in-christmas`, `vb-in-spring`, `vb-in-mothers`, `vb-in-fathers`, `vb-in-summer`: puts the product first, with an "In season" tag, during that season.
   - `vb-cat-cookies`, `vb-cat-pastry`, `vb-cat-marzipan`, `vb-cat-trays`: which filter button shows it.
   - `vb-only-SEASON`: only shows during that season (used for the seasonal specials).
@@ -64,8 +66,7 @@ These parts are placeholders in the theme. Each one needs a service or plugin:
 
 | Part | What to use |
 |---|---|
-| Shop buy buttons | Cards show price only until the online store is connected. Then add a Buttons block to each card's buy row (Shop pattern) linking to its product page, or use Shopify's Buy Button. |
-| Holiday pre-order form | Shopify local pickup with a scheduling app, or WooCommerce with a pickup-date plugin. Replace the form in the Holiday pre-order form pattern (Shop page). |
+| Holiday pickup pre-orders | Not online yet. If the Shopify store turns on local pickup, point the seasonal card and the feast section at it. |
 | Instagram grid | An Instagram feed plugin (for example Smash Balloon). Replace the photo grid in the Instagram pattern with the plugin's block. |
 | Reviews | Optional: a Google Reviews plugin to replace the hand-picked review cards. |
 | Newsletter signup | Mailchimp (or your email tool's) WordPress form block. Replace the form in the Footer pattern. |

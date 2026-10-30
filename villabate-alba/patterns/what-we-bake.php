@@ -24,7 +24,7 @@ $villabate_cats = array(
 <!-- wp:group {"className":"vb-card-grid","layout":{"type":"grid","minimumColumnWidth":"240px"}} -->
 <div class="wp-block-group vb-card-grid"><?php foreach ( $villabate_cats as $villabate_cat ) : ?><!-- wp:group {"className":"vb-cat","layout":{"type":"default"}} -->
 <div class="wp-block-group vb-cat"><!-- wp:image {"linkDestination":"custom","className":"vb-arch vb-arch--framed"} -->
-<figure class="wp-block-image vb-arch vb-arch--framed"><a href="<?php echo esc_attr( $villabate_cat[4] ); ?>"><img src="<?php echo villabate_img( $villabate_cat[0] ); ?>" alt="<?php echo esc_attr( $villabate_cat[1] ); ?>"/></a></figure>
+<figure class="wp-block-image vb-arch vb-arch--framed"><img src="<?php echo villabate_img( $villabate_cat[0] ); ?>" alt="<?php echo esc_attr( $villabate_cat[1] ); ?>"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":3} -->

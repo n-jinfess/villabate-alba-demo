@@ -61,15 +61,20 @@ function villabate_img( $file ) {
 }
 
 /**
- * The two ordering pages. The homepage only advertises them; buying happens on these pages.
- * Slugs match the page templates templates/page-shop.html and templates/page-custom-cakes.html.
+ * Pages beyond the homepage. Only Custom cakes: shipping orders go straight to the bakery's own
+ * Shopify store (VILLABATE_SHIP_STORE), and pickup orders are by phone.
+ * The slug matches the page template templates/page-custom-cakes.html.
  */
 function villabate_pages() {
 	return array(
-		'shop'         => __( 'Shop', 'villabate-alba' ),
 		'custom-cakes' => __( 'Custom cakes', 'villabate-alba' ),
 	);
 }
+
+/**
+ * The bakery's Shopify store for nationwide shipping (ships Tuesday and Wednesday).
+ */
+define( 'VILLABATE_SHIP_STORE', 'https://villabate-alba-shipping.myshopify.com/' );
 
 /**
  * Create the ordering pages when the theme is activated, if they do not exist yet.

@@ -54,7 +54,14 @@
 		if ( close ) { close.addEventListener( 'click', dismissBar ); }
 	}
 
-	/* Seasonal shop: the full shop on the Shop page, and the 4-card teaser on the homepage */
+	/* Order menu: close it on Escape or a click anywhere else */
+	var orderMenu = document.querySelector( '.vb-order' );
+	if ( orderMenu ) {
+		document.addEventListener( 'click', function ( e ) { if ( ! orderMenu.contains( e.target ) ) { orderMenu.open = false; } } );
+		document.addEventListener( 'keydown', function ( e ) { if ( 'Escape' === e.key && orderMenu.open ) { orderMenu.open = false; orderMenu.querySelector( 'summary' ).focus(); } } );
+	}
+
+	/* Seasonal sorting for the homepage sweets teaser (4 cards, season first) */
 	document.querySelectorAll( '.vb-shop-grid' ).forEach( function ( grid ) {
 		var limit = grid.classList.contains( 'vb-shop-grid--teaser' ) ? 4 : 8;
 		var section = grid.closest( '.vb-shop' ) || document;

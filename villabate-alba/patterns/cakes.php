@@ -39,7 +39,7 @@
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo villabate_page_url( 'custom-cakes' ); ?>">Start a cake order →</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo villabate_page_url( 'custom-cakes' ); ?>">Request a cake →</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
 

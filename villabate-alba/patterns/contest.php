@@ -19,13 +19,7 @@
 
 <!-- wp:paragraph -->
 <p>Every August, during the Feast of Santa Rosalia, the street outside fills up for our cannoli eating contest. There’s a men’s round and a women’s round, and the winners take home a trophy.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-light"} -->
-<div class="wp-block-button is-style-light"><a class="wp-block-button__link wp-element-button" href="#contact">Sign up for 2027</a></div>
-<!-- /wp:button --></div>
-<!-- /wp:buttons --></div>
+<!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center"} -->

@@ -51,8 +51,23 @@ body { margin: 0; }
 /* Logo left; links sit beside the Order online button. The extra .vb-header beats WordPress's
    body .is-layout-flex > * { margin: 0 }, which would otherwise cancel the auto margin. */
 .vb-header .vb-nav { margin-left: auto; flex: 0 1 auto; }
-.vb-header .vb-header__cta { margin-left: 12px; }
 .vb-nav a { text-decoration: none; padding: 10px 0; }
+
+/* Order menu in the header: one button, two real ways to order. A <details> element, so it works without the script. */
+.vb-header .vb-order { margin-left: 12px; position: relative; }
+.vb-order__btn { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 24px; border-radius: 999px; background: var(--vb-green); color: #fff; font-weight: 600; }
+.vb-order__btn::-webkit-details-marker { display: none; }
+.vb-order__btn::after { content: ""; width: 7px; height: 7px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform .2s; }
+.vb-order[open] .vb-order__btn::after { transform: translateY(2px) rotate(-135deg); }
+.vb-order__menu { position: absolute; right: 0; top: calc(100% + 10px); z-index: 120; width: min(320px, calc(100vw - 32px)); background: var(--vb-white); border: 1px solid var(--vb-line); border-radius: 18px; box-shadow: 0 16px 40px rgba(31, 35, 64, .18); padding: 8px; display: grid; gap: 4px; }
+.vb-order__opt { display: grid; gap: 2px; padding: 12px 14px; border-radius: 12px; color: var(--vb-ink); text-decoration: none; }
+.vb-order__opt:hover, .vb-order__opt:focus-visible { background: var(--vb-mint); }
+.vb-order__opt strong { font-size: 1rem; }
+.vb-order__opt span { font-size: .8125rem; color: var(--vb-muted); }
+.vb-hours-line { font-size: .9375rem; color: var(--vb-muted); }
+.vb-hours-line a { color: var(--vb-green); font-weight: 600; }
+.vb-holiday__order { font-size: 1.0625rem; margin-bottom: 8px; }
+.vb-holiday__order a { color: var(--vb-white); font-weight: 600; }
 
 /* Seasonal card: slides in from the right a moment after the page loads */
 .vb-seasonbar { position: fixed; right: 24px; top: 140px; z-index: 100; width: min(340px, calc(100% - 32px)); box-sizing: border-box; background: var(--vb-ink); color: var(--vb-cream); border-left: 5px solid var(--vb-red); border-radius: 14px; padding: 10px 40px 10px 10px; display: flex; gap: 10px; align-items: center; box-shadow: 0 12px 32px rgba(31, 35, 64, .25); font-size: .8125rem; line-height: 1.4; transform: translateX(calc(100% + 40px)); opacity: 0; transition: transform .6s cubic-bezier(.2, .8, .2, 1), opacity .4s; }
@@ -178,8 +193,7 @@ body[data-vb-season]:not([data-vb-season="summer"]) .vb-only-summer { display: n
 /* Homepage holiday card: a pitch and one button instead of the form */
 .vb-preorder--cta > * { margin: 0; }
 .vb-preorder--cta .wp-block-button__link { background: var(--vb-green); color: #fff; }
-.vb-feasts__title { font-size: 1.75rem; border-top: 1px solid #E26A73; padding-top: 28px; margin-top: 48px; }
-.vb-feasts { gap: 16px; }
+.vb-feasts { gap: 16px; margin-top: 28px; }
 .vb-feast figure { margin: 0 0 10px; }
 .vb-feast img { aspect-ratio: 4 / 5; border: 4px solid var(--vb-white); box-sizing: border-box; }
 .vb-feast .vb-slides { margin: 0 0 10px; }

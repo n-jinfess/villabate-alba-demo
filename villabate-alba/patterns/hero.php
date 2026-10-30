@@ -21,11 +21,9 @@
 <p class="vb-lede">We’ve been baking Sicilian pastry on 18th Avenue every morning since 1979.</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"className":"vb-shop-link"} -->
-<div class="wp-block-button vb-shop-link"><a class="wp-block-button__link wp-element-button" href="<?php echo villabate_page_url( 'shop' ); ?>">Order online</a></div>
-<!-- /wp:button --></div>
-<!-- /wp:buttons -->
+<!-- wp:paragraph {"className":"vb-hours-line"} -->
+<p class="vb-hours-line">Open every day, 7 AM to 8 PM · <a href="tel:+17183318430">(718) 331-8430</a></p>
+<!-- /wp:paragraph -->
 
 <!-- wp:group {"className":"vb-stats","layout":{"type":"flex","flexWrap":"wrap"}} -->
 <div class="wp-block-group vb-stats"><!-- wp:paragraph -->

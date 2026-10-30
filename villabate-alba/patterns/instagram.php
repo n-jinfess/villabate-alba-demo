@@ -41,16 +41,10 @@ $villabate_posts = array(
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"className":"vb-ig-grid","layout":{"type":"grid","columnCount":3}} -->
-<div class="wp-block-group vb-ig-grid"><?php foreach ( $villabate_posts as $villabate_post ) : ?><!-- wp:image {"linkDestination":"custom"} -->
-<figure class="wp-block-image"><a href="https://www.instagram.com/villabatealba/"><img src="<?php echo villabate_img( $villabate_post[0] ); ?>" alt="<?php echo esc_attr( $villabate_post[1] ); ?>"/></a></figure>
+<div class="wp-block-group vb-ig-grid"><?php foreach ( $villabate_posts as $villabate_post ) : ?><!-- wp:image -->
+<figure class="wp-block-image"><img src="<?php echo villabate_img( $villabate_post[0] ); ?>" alt="<?php echo esc_attr( $villabate_post[1] ); ?>"/></figure>
 <!-- /wp:image --><?php endforeach; ?></div>
-<!-- /wp:group -->
-
-<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
-<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="https://www.instagram.com/villabatealba/">See more on Instagram</a></div>
-<!-- /wp:button --></div>
-<!-- /wp:buttons --></div>
+<!-- /wp:group --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></section>
 <!-- /wp:group -->

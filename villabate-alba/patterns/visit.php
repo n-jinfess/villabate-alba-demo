@@ -39,7 +39,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><strong>Big order?</strong> Order online and skip the wait.</p>
+<p><strong>Big order?</strong> Call ahead at (718) 331-8430.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -50,10 +50,6 @@
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button -->
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://www.google.com/maps/dir/?api=1&amp;destination=Villabate+Alba+7001+18th+Ave+Brooklyn+NY+11204">Get directions</a></div>
-<!-- /wp:button -->
-
-<!-- wp:button {"className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="tel:+17183318430">Call us</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:column -->
