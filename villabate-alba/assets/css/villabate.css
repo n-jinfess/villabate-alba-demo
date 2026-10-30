@@ -260,8 +260,6 @@ body[data-vb-season]:not([data-vb-season="summer"]) .vb-only-summer { display: n
 .vb-footer__brand { gap: 16px; align-items: center; }
 .vb-footer__logo { margin: 0; }
 .vb-footer__logo img { height: 80px; width: auto; }
-.vb-emblem { margin: 0; }
-.vb-emblem img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 2px solid var(--vb-lemon); }
 .vb-footer__copy { font-size: .8125rem; color: #A9A8C2; margin-top: 40px; }
 
 /* ---------- Motion (front end only: html.vb-motion is set in the head, never in the editor) ----------

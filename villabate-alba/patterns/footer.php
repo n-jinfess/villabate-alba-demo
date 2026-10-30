@@ -1,10 +1,10 @@
 <?php
 /**
- * Title: Footer (newsletter, links, emblem)
+ * Title: Footer (newsletter, links, logo)
  * Slug: villabate/footer
  * Categories: villabate, footer
  * Block Types: core/template-part/footer
- * Description: Tile band, newsletter signup, link columns, the logo and the Trinacria. Replace the signup form with your email tool's form block (Mailchimp, etc.).
+ * Description: Tile band, newsletter signup, link columns and the logo. Replace the signup form with your email tool's form block (Mailchimp, etc.).
  */
 ?>
 <!-- wp:html -->
@@ -42,10 +42,6 @@
 <div class="wp-block-column"><!-- wp:group {"className":"vb-footer__brand","layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group vb-footer__brand"><!-- wp:image {"className":"vb-footer__logo"} -->
 <figure class="wp-block-image vb-footer__logo"><img src="<?php echo villabate_img( 'logo-lockup-light.png' ); ?>" alt="Villabate Alba"/></figure>
-<!-- /wp:image -->
-
-<!-- wp:image {"className":"vb-emblem"} -->
-<figure class="wp-block-image vb-emblem"><img src="<?php echo villabate_img( 'sicily-emblem.jpg' ); ?>" alt="The Trinacria, emblem of Sicily"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group -->
 
