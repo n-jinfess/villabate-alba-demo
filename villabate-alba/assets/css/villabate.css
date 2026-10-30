@@ -181,6 +181,7 @@ body[data-vb-season]:not([data-vb-season="summer"]) .vb-only-summer { display: n
 .vb-feasts { gap: 16px; }
 .vb-feast figure { margin: 0 0 10px; }
 .vb-feast img { aspect-ratio: 4 / 5; border: 4px solid var(--vb-white); box-sizing: border-box; }
+.vb-feast .vb-slides { margin: 0 0 10px; }
 .vb-feast p { font-size: .875rem; color: #FBE9DD; margin: 0; }
 .vb-feast strong { color: var(--vb-white); font-size: 1rem; }
 

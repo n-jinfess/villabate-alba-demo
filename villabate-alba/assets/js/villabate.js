@@ -156,7 +156,7 @@
 	}
 
 	/* Photo slideshows (the Today step in Our story): cross-fade every few seconds */
-	document.querySelectorAll( '.vb-slides' ).forEach( function ( box ) {
+	document.querySelectorAll( '.vb-slides' ).forEach( function ( box, n ) {
 		var slides = Array.prototype.slice.call( box.querySelectorAll( ':scope > figure' ) );
 		if ( slides.length < 2 ) { return; }
 		var dots = document.createElement( 'div' );
@@ -175,12 +175,15 @@
 		};
 		box.classList.add( 'is-ready' );
 		show( 0 );
-		window.setInterval( function () { current = ( current + 1 ) % slides.length; show( current ); }, reduce ? 9000 : 4000 );
+		/* Each slideshow starts a little later than the one before, so a row of them never flips at once */
+		window.setTimeout( function () {
+			window.setInterval( function () { current = ( current + 1 ) % slides.length; show( current ); }, reduce ? 9000 : 4000 );
+		}, ( n % 6 ) * 700 );
 	} );
 
 	/* Photo fade-in: supporting photos only, once, on wide screens. Text, prices, buttons, the shop and
 	   the order forms never animate, and anything already on screen at load is left alone. */
-	var PHOTOS = '.vb-cat figure, .vb-feast figure, .vb-timeline__step > figure, .vb-slides, .vb-euro figure, .vb-inside figure, .vb-contest__photos figure, .vb-cakes .vb-arch--framed, .vb-ig-grid figure, .vb-visit .vb-framed-photo';
+	var PHOTOS = '.vb-cat figure, .vb-feast .vb-slides, .vb-timeline__step > figure, .vb-slides, .vb-euro figure, .vb-inside figure, .vb-contest__photos figure, .vb-cakes .vb-arch--framed, .vb-ig-grid figure, .vb-visit .vb-framed-photo';
 	var wide = window.matchMedia && window.matchMedia( '(min-width: 782px)' ).matches;
 	if ( document.documentElement.classList.contains( 'vb-motion' ) && wide && 'IntersectionObserver' in window ) {
 		var io = new IntersectionObserver( function ( entries ) {

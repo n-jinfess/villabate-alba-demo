@@ -5,13 +5,45 @@
  * Categories: villabate
  * Description: Skip-the-line pitch and the "every feast on the calendar" strip (homepage). The pre-order form itself is on the Shop page.
  */
+// Each feast: name, line, then its photos (file => alt). Two or more photos become a slideshow.
 $villabate_feasts = array(
-	array( 'feast-st-patricks.jpg', 'St. Patrick’s Day', 'Pistachio zeppole and sfingi' ),
-	array( 'feast-easter-egg.jpg', 'Easter', 'Hand-painted chocolate eggs' ),
-	array( 'season-mothers-day.jpg', 'Mother’s Day', 'Heart cookies for Mom' ),
-	array( 'holiday-fathers-day.jpg', 'Father’s Day', 'Custom cakes for Dad' ),
-	array( 'season-thanksgiving.jpg', 'Thanksgiving', 'The turkey cake and pies' ),
-	array( 'feast-gingerbread-house.jpg', 'Christmas', 'Gingerbread houses, trays and cookies' ),
+	array( 'St. Patrick’s Day', 'Pistachio zeppole and sfingi', array( 'feast-st-patricks.jpg' => 'Pistachio zeppole with shamrocks and Villabate Alba plaques' ) ),
+	array(
+		'Easter',
+		'Hand-painted chocolate eggs',
+		array(
+			'feast-easter-egg.jpg' => 'A giant chocolate Easter egg hand-painted with a mountain landscape',
+			'season-easter.jpg'    => 'A chocolate Easter egg decorated with flowers and chicks',
+			'holiday-easter.jpg'   => 'Chocolate Easter eggs wrapped in cellophane',
+		),
+	),
+	array( 'Mother’s Day', 'Heart cookies for Mom', array( 'season-mothers-day.jpg' => 'Mother’s Day heart cookies' ) ),
+	array(
+		'Father’s Day',
+		'Custom cakes for Dad',
+		array(
+			'holiday-fathers-day.jpg' => 'A Father’s Day cake with a beach scene and DAD in gold letters',
+			'season-fathers-day.jpg'  => 'A Father’s Day cake shaped like a shirt and tie',
+		),
+	),
+	array(
+		'Thanksgiving',
+		'The turkey cake and pies',
+		array(
+			'season-thanksgiving.jpg' => 'A turkey cake for Thanksgiving',
+			'feast-pecan-pie.jpg'     => 'A pecan pie',
+		),
+	),
+	array(
+		'Christmas',
+		'Gingerbread houses, trays and cookies',
+		array(
+			'feast-gingerbread-house.jpg' => 'A decorated gingerbread house',
+			'feast-cannoli-tree.jpg'      => 'A Christmas tree built from green cannoli',
+			'feast-gingerbread-man.jpg'   => 'A gingerbread man cake',
+			'season-christmas.jpg'        => 'A tray of Christmas pastries',
+		),
+	),
 );
 ?>
 <!-- wp:group {"tagName":"section","anchor":"holiday","className":"vb-section vb-holiday","layout":{"type":"constrained"}} -->
@@ -59,12 +91,14 @@ $villabate_feasts = array(
 
 <!-- wp:group {"className":"vb-feasts","layout":{"type":"grid","minimumColumnWidth":"180px"}} -->
 <div class="wp-block-group vb-feasts"><?php foreach ( $villabate_feasts as $villabate_f ) : ?><!-- wp:group {"className":"vb-feast","layout":{"type":"default"}} -->
-<div class="wp-block-group vb-feast"><!-- wp:image {"className":"vb-arch"} -->
-<figure class="wp-block-image vb-arch"><img src="<?php echo villabate_img( $villabate_f[0] ); ?>" alt="<?php echo esc_attr( $villabate_f[1] . ': ' . $villabate_f[2] ); ?>"/></figure>
-<!-- /wp:image -->
+<div class="wp-block-group vb-feast"><!-- wp:group {"className":"vb-slides","layout":{"type":"default"}} -->
+<div class="wp-block-group vb-slides"><?php foreach ( $villabate_f[2] as $villabate_file => $villabate_alt ) : ?><!-- wp:image {"className":"vb-arch"} -->
+<figure class="wp-block-image vb-arch"><img src="<?php echo villabate_img( $villabate_file ); ?>" alt="<?php echo esc_attr( $villabate_alt ); ?>"/></figure>
+<!-- /wp:image --><?php endforeach; ?></div>
+<!-- /wp:group -->
 
 <!-- wp:paragraph -->
-<p><strong><?php echo esc_html( $villabate_f[1] ); ?></strong><br><?php echo esc_html( $villabate_f[2] ); ?></p>
+<p><strong><?php echo esc_html( $villabate_f[0] ); ?></strong><br><?php echo esc_html( $villabate_f[1] ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --><?php endforeach; ?></div>
 <!-- /wp:group --></section>
