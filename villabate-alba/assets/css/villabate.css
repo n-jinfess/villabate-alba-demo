@@ -39,6 +39,8 @@ body { margin: 0; }
 
 /* ---------- Header ---------- */
 .vb-tricolore { height: 8px; background: linear-gradient(90deg, var(--vb-green) 0 33.33%, var(--vb-white) 33.33% 66.66%, var(--vb-red) 66.66%); }
+/* On the cream page the white third needs pure white and a hairline edge, or it disappears into the background */
+.vb-topbar .vb-tricolore { background: linear-gradient(90deg, var(--vb-green) 0 33.33%, #fff 33.33% 66.66%, var(--vb-red) 66.66%); box-shadow: inset 0 -1px 0 var(--vb-line); }
 .vb-tiles { height: 24px; background: var(--vb-tile) repeat-x left center / 24px 24px; }
 .vb-tiles--tall { height: 48px; background-size: 48px 48px; }
 .vb-tiles--dark { height: 48px; background-image: var(--vb-tile-dark); background-size: 48px 48px; margin: calc(-1 * clamp(56px, 7vw, 88px)) -24px clamp(40px, 5vw, 72px); }
@@ -184,6 +186,12 @@ body[data-vb-season]:not([data-vb-season="summer"]) .vb-only-summer { display: n
 .vb-flavors__title { font-size: 1.25rem; margin: 28px 0 10px; }
 .vb-cake-order > .wp-block-columns { gap: 48px; align-items: flex-start; }
 .vb-events-page { background: var(--vb-parchment); }
+/* Occasion photos on the Custom cakes page: only the occasion picked in the form shows */
+.vb-occasions { max-width: 460px; margin-inline: auto; }
+.vb-occasions:not(.is-ready) > .vb-occasion + .vb-occasion, .vb-occasions.is-ready > .vb-occasion:not(.is-current) { display: none; }
+.vb-occasion.is-current { animation: vb-fade-in .3s ease-out; }
+.vb-occasion__label { text-align: center; font-family: var(--vb-display); font-style: italic; font-size: 1.125rem; color: var(--vb-muted); margin: 14px 0 0; }
+@keyframes vb-fade-in { from { opacity: 0; } }
 .vb-events-page > .wp-block-columns { gap: 56px; }
 .vb-cakes { background: var(--vb-blush); }
 .vb-cakes .vb-arch--framed img { aspect-ratio: 1 / 1; }
@@ -367,6 +375,7 @@ body { overflow-x: clip; -webkit-tap-highlight-color: transparent; }
 	.vb-preorder select, .vb-news input, .vb-preorder input, .vb-preorder textarea { font-size: 16px; }
 	.vb-rotator.is-ready { min-height: 10.5rem; }
 	.vb-form-row { grid-template-columns: 1fr; }
+	.vb-occasions { max-width: 280px; }
 	.vb-motion { --vb-sheet: 28px; }
 
 	/* First visit: three small rounds across instead of six stacked */
@@ -398,6 +407,7 @@ body { overflow-x: clip; -webkit-tap-highlight-color: transparent; }
 	.vb-merch-grid > * { flex-basis: 62%; }
 }
 @media (prefers-reduced-motion: reduce) {
+	.vb-occasion.is-current { animation: none; }
 	.vb-seasonbar { transition: none; }
 	.vb-rotator.is-ready .vb-rq, .vb-dots span { transition: none; }
 }

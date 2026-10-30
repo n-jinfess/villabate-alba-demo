@@ -141,6 +141,20 @@
 		start();
 	} );
 
+	/* Custom cakes: the Occasion picked in the form shows that occasion's cake photos */
+	var occasions = document.querySelector( '.vb-occasions' );
+	var occasionSelect = document.getElementById( 'vb-occasion' );
+	if ( occasions && occasionSelect ) {
+		var showOccasion = function () {
+			Array.prototype.forEach.call( occasions.children, function ( el ) {
+				el.classList.toggle( 'is-current', el.classList.contains( 'vb-occasion--' + occasionSelect.value ) );
+			} );
+		};
+		occasions.classList.add( 'is-ready' );
+		showOccasion();
+		occasionSelect.addEventListener( 'change', showOccasion );
+	}
+
 	/* Photo slideshows (the Today step in Our story): cross-fade every few seconds */
 	document.querySelectorAll( '.vb-slides' ).forEach( function ( box ) {
 		var slides = Array.prototype.slice.call( box.querySelectorAll( ':scope > figure' ) );

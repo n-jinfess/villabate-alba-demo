@@ -3,34 +3,64 @@
  * Title: Cake order form (Custom cakes page)
  * Slug: villabate/cake-order
  * Categories: villabate
- * Description: The three ordering steps, flavors and fillings, and the cake request form, then weddings and events. The form is a visual placeholder: point it at a form plugin such as WPForms or Gravity Forms (see README).
+ * Description: Photos of past cakes that change with the Occasion picked in the form, flavors and fillings, and the cake request form, then weddings and events. The form is a visual placeholder: point it at a form plugin such as WPForms or Gravity Forms (see README).
  */
 // Flavors and fillings offered; also update the Flavor select in the form below if you change these.
 $villabate_flavors = array( 'Cassata', 'Rum', 'Cannoli cream', 'Pistachio', 'Lemon' );
+
+// Occasion => label and photos (file => alt text). The form's Occasion select uses these keys,
+// and picking one shows its photos. Add an occasion here and it appears in both places.
+$villabate_occasions = array(
+	'birthday'    => array(
+		'Birthday',
+		array(
+			'custom-cake.jpg' => 'A baker piping a message on a strawberry and chocolate drip cake',
+			'cakes.jpg'       => 'A fresh berry tart with a Villabate Alba plaque',
+			'ig-4.jpg'        => 'A cake made to look like a slice of watermelon',
+		),
+	),
+	'wedding'     => array(
+		'Wedding',
+		array( 'cartocci-cake.jpg' => 'A wedding tower of sugared cartocci and fresh roses' ),
+	),
+	'fathers-day' => array(
+		'Father’s Day',
+		array(
+			'season-fathers-day.jpg'  => 'A Father’s Day cake shaped like a shirt and tie',
+			'holiday-fathers-day.jpg' => 'A Father’s Day cake with a beach scene and DAD in gold letters',
+		),
+	),
+	'holiday'     => array(
+		'Holiday or theme',
+		array(
+			'ig-1.jpg'                => 'A green Frankenstein cake for Halloween',
+			'season-thanksgiving.jpg' => 'A turkey cake for Thanksgiving',
+		),
+	),
+	'other'       => array(
+		'Christening, communion or something else',
+		array(
+			'story-today.jpg'   => 'A table of decorated cakes at the bakery',
+			'story-founder.jpg' => 'Cassata cakes fresh from the kitchen',
+		),
+	),
+);
 ?>
 <!-- wp:group {"tagName":"section","anchor":"order","className":"vb-section vb-cakes vb-cake-order","layout":{"type":"constrained"}} -->
 <section id="order" class="wp-block-group vb-section vb-cakes vb-cake-order"><!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column -->
-<div class="wp-block-column"><!-- wp:paragraph {"className":"vb-eyebrow"} -->
-<p class="vb-eyebrow">How it works</p>
-<!-- /wp:paragraph -->
+<div class="wp-block-column"><!-- wp:group {"className":"vb-occasions","layout":{"type":"default"}} -->
+<div id="vb-occasions" class="wp-block-group vb-occasions"><?php foreach ( $villabate_occasions as $villabate_key => $villabate_occ ) : ?><!-- wp:group {"className":"vb-occasion vb-occasion--<?php echo esc_attr( $villabate_key ); ?>","layout":{"type":"default"}} -->
+<div class="wp-block-group vb-occasion vb-occasion--<?php echo esc_attr( $villabate_key ); ?>"><!-- wp:group {"className":"vb-slides","layout":{"type":"default"}} -->
+<div class="wp-block-group vb-slides"><?php foreach ( $villabate_occ[1] as $villabate_file => $villabate_alt ) : ?><!-- wp:image {"className":"vb-arch vb-arch--framed"} -->
+<figure class="wp-block-image vb-arch vb-arch--framed"><img src="<?php echo villabate_img( $villabate_file ); ?>" alt="<?php echo esc_attr( $villabate_alt ); ?>"/></figure>
+<!-- /wp:image --><?php endforeach; ?></div>
+<!-- /wp:group -->
 
-<!-- wp:heading -->
-<h2 class="wp-block-heading">Three steps to your cake.</h2>
-<!-- /wp:heading -->
-
-<!-- wp:group {"className":"vb-steps","layout":{"type":"default"}} -->
-<div class="wp-block-group vb-steps"><!-- wp:paragraph -->
-<p><span class="vb-step">I</span><strong>Pick size and occasion</strong><br>Birthday, wedding, christening, communion</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p><span class="vb-step">II</span><strong>Choose flavors and filling</strong><br>Add an inspiration photo if you have one</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p><span class="vb-step">III</span><strong>Pick up in Brooklyn</strong><br>Order 3 to 5 days ahead</p>
+<!-- wp:paragraph {"className":"vb-occasion__label"} -->
+<p class="vb-occasion__label"><?php echo esc_html( $villabate_occ[0] ); ?> cakes we’ve made</p>
 <!-- /wp:paragraph --></div>
+<!-- /wp:group --><?php endforeach; ?></div>
 <!-- /wp:group -->
 
 <!-- wp:heading {"level":3,"className":"vb-flavors__title"} -->
@@ -48,7 +78,7 @@ $villabate_flavors = array( 'Cassata', 'Rum', 'Cannoli cream', 'Pistachio', 'Lem
   <p class="vb-preorder__title">Request a cake</p>
   <div class="vb-form-row">
     <div><label for="vb-occasion">Occasion</label>
-      <select id="vb-occasion" name="occasion"><option>Birthday</option><option>Wedding</option><option>Christening</option><option>Communion</option><option>Anniversary</option><option>Other</option></select></div>
+      <select id="vb-occasion" name="occasion" aria-controls="vb-occasions"><?php foreach ( $villabate_occasions as $villabate_key => $villabate_occ ) : ?><option value="<?php echo esc_attr( $villabate_key ); ?>"><?php echo esc_html( $villabate_occ[0] ); ?></option><?php endforeach; ?></select></div>
     <div><label for="vb-servings">Serves</label>
       <select id="vb-servings" name="servings"><option>[SIZES]</option></select></div>
   </div>
