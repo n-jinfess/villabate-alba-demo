@@ -49,7 +49,8 @@ body { margin: 0; }
 .vb-header { max-width: 1200px; margin: 0 auto; padding: 14px 24px; gap: 16px; }
 .vb-logo { margin: 0; }
 .vb-logo img { height: 70px; width: auto; display: block; }
-.vb-nav { font-weight: 500; gap: 4px 28px; }
+.vb-nav { font-weight: 500; gap: 4px 28px; margin-left: auto; } /* logo left; links sit beside the Order online button */
+.vb-header__cta { margin-left: 12px; }
 .vb-nav a { text-decoration: none; padding: 10px 0; }
 
 /* Seasonal card: slides in from the right a moment after the page loads */
