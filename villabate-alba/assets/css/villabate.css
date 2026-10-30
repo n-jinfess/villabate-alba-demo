@@ -309,7 +309,7 @@ body[data-vb-season]:not([data-vb-season="summer"]) .vb-only-summer { display: n
 /* ---------- Ordering pages (Shop, Custom cakes) and the homepage shop teaser ---------- */
 .vb-page-intro { padding-bottom: clamp(32px, 4vw, 48px); }
 .vb-page-intro h1 { margin: 0 0 12px; font-size: clamp(2.5rem, 5vw, 3.75rem); }
-.vb-page-intro .vb-lede { max-width: none; } /* constrained layout would otherwise center the narrow lede */
+.vb-page-intro .vb-lede { max-width: var(--wp--style--global--content-size); } /* full column width, so the constrained layout keeps it left-aligned */
 .vb-page-intro h1 em { color: var(--vb-green); }
 .vb-order-line { flex-basis: 100%; margin: 4px 0 0; font-size: .9375rem; color: var(--vb-muted); }
 .vb-order-line a { color: var(--vb-green); font-weight: 600; }
