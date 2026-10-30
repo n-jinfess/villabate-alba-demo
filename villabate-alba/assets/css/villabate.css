@@ -84,7 +84,7 @@ body[data-vb-season]:not([data-vb-season="summer"]) .vb-only-summer { display: n
 .vb-stats { gap: 28px; border-top: 1px solid var(--vb-line); padding-top: 18px; font-size: .875rem; color: var(--vb-muted); }
 .vb-stats p { margin: 0; }
 .vb-stats strong { display: block; font-family: var(--vb-display); font-size: 1.375rem; font-weight: 600; color: var(--vb-red); }
-.vb-tile-panel { background: var(--vb-tile) repeat / 48px 48px; border: 6px solid var(--vb-parchment); box-shadow: 0 0 0 1px var(--vb-line); border-radius: 32px; padding: 28px; display: grid !important; grid-template-columns: 1fr 1fr; grid-template-rows: 250px 250px; gap: 16px; }
+.vb-tile-panel { background: var(--vb-tile) 0 0 / 48px 48px repeat; border: 6px solid var(--vb-parchment); box-shadow: 0 0 0 1px var(--vb-line); border-radius: 32px; padding: 28px; display: grid !important; grid-template-columns: 1fr 1fr; grid-template-rows: 250px 250px; gap: 16px; }
 .vb-tile-panel figure { margin: 0; height: 100%; }
 .vb-tile-panel img { width: 100%; height: 100%; object-fit: cover; border: 4px solid var(--vb-cream); box-sizing: border-box; display: block; }
 .vb-hero__main { grid-row: span 2; }
@@ -98,8 +98,9 @@ body[data-vb-season]:not([data-vb-season="summer"]) .vb-only-summer { display: n
 .vb-rq p::before { content: "★★★★★"; display: block; font-style: normal; font-family: inherit; color: var(--vb-red); letter-spacing: 2px; font-size: .8rem; margin-bottom: .3rem; }
 .vb-rq cite { font-style: normal; font-size: .8125rem; color: var(--vb-muted); }
 .vb-rotator.is-ready { position: relative; min-height: 8.5rem; }
-.vb-rotator.is-ready .vb-rq { position: absolute; inset: 18px 0 0; opacity: 0; transition: opacity .9s ease; margin: 0; }
-.vb-rotator.is-ready .vb-rq.is-active { opacity: 1; }
+/* The outgoing quote fades first and the next one waits for it, so two never overlap */
+.vb-rotator.is-ready .vb-rq { position: absolute; inset: 18px 0 0; opacity: 0; transition: opacity .35s ease; margin: 0; }
+.vb-rotator.is-ready .vb-rq.is-active { opacity: 1; transition: opacity .6s ease .35s; }
 .vb-dots { display: flex; gap: 6px; margin-top: 8px; }
 .vb-dots span { height: 6px; width: 6px; border-radius: 3px; background: var(--vb-line); transition: width .4s, background .4s; }
 .vb-dots span.is-active { width: 22px; background: var(--vb-red); }
@@ -295,6 +296,35 @@ body { overflow-x: clip; -webkit-tap-highlight-color: transparent; }
 	.vb-seasonbar.is-in { transform: none; }
 	/* 16px inputs stop Safari zooming the page on focus */
 	.vb-preorder select, .vb-news input, .vb-preorder input, .vb-preorder textarea { font-size: 16px; }
+	.vb-rotator.is-ready { min-height: 10.5rem; }
+
+	/* First visit: three small rounds across instead of six stacked */
+	.vb-must-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 18px 10px; }
+	.vb-must .vb-round img { width: 84px; height: 84px; outline-width: 4px; outline-offset: -7px; }
+	.vb-must h3 { font-size: 1rem; }
+	.vb-must p { display: none; }
+	.vb-must::after { font-size: .625rem; padding: 2px 7px; }
+
+	/* Shop: two-up product grid */
+	.vb-shop-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 10px; }
+	.vb-shop .vb-product { padding: 8px; border-radius: 16px; gap: 6px; }
+	.vb-shop .vb-product img { aspect-ratio: 1 / 1; border-radius: 10px; }
+	.vb-shop .vb-product h3 { font-size: .875rem; line-height: 1.25; }
+	.vb-shop .vb-product .vb-muted { font-size: .75rem; }
+	.vb-shop .vb-badge { top: 6px; left: 6px; font-size: .625rem; padding: 3px 8px; }
+	.vb-shop .vb-product__buy { flex-direction: column; align-items: stretch; gap: 6px; }
+	.vb-shop .vb-product__buy .wp-block-button, .vb-shop .vb-product__buy .wp-block-button__link { width: 100%; }
+	.vb-shop .vb-product__buy .wp-block-button__link { min-height: 40px; }
+	.vb-chips { flex-wrap: nowrap; overflow-x: auto; margin-inline: -18px; padding-inline: 18px; scrollbar-width: none; }
+	.vb-chips::-webkit-scrollbar { display: none; }
+	.vb-chip { flex: 0 0 auto; }
+
+	/* Swipe rows: cards scroll sideways and the next one peeks in */
+	.vb-card-grid, .vb-feasts, .vb-timeline, .vb-merch-grid, .vb-review-grid { display: flex !important; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 18px; margin-inline: -18px; padding: 0 18px 6px; gap: 14px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+	.vb-card-grid::-webkit-scrollbar, .vb-feasts::-webkit-scrollbar, .vb-timeline::-webkit-scrollbar, .vb-merch-grid::-webkit-scrollbar, .vb-review-grid::-webkit-scrollbar { display: none; }
+	.vb-card-grid > *, .vb-feasts > *, .vb-timeline > *, .vb-merch-grid > *, .vb-review-grid > * { flex: 0 0 78%; scroll-snap-align: start; margin: 0 !important; }
+	.vb-feasts > * { flex-basis: 46%; }
+	.vb-merch-grid > * { flex-basis: 62%; }
 }
 @media (prefers-reduced-motion: reduce) {
 	.vb-seasonbar { transition: none; }
