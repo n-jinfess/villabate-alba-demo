@@ -3,7 +3,7 @@
  * Title: Merch (la bottega)
  * Slug: villabate/merch
  * Categories: villabate
- * Description: Carretto and storefront apparel (homepage). Photos only; buying happens through the Shop page.
+ * Description: Carretto and storefront apparel with one button to the Villabate Alba collection on Neighborhood Spot (VILLABATE_MERCH_STORE in functions.php).
  */
 $villabate_merch = villabate_merch_items();
 ?>
@@ -22,8 +22,14 @@ $villabate_merch = villabate_merch_items();
 <p class="vb-muted">Our tees and hoodies have the Sicilian carretto on the back. That’s the painted donkey cart from back home.</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"className":"vb-muted"} -->
-<p class="vb-muted">In the shop on 18th Avenue, and on our Shop page.</p>
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( VILLABATE_MERCH_STORE ); ?>">Shop the collection →</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
+
+<!-- wp:paragraph {"className":"vb-merch-note"} -->
+<p class="vb-merch-note">Sold through Neighborhood Spot, or pick some up at the shop on 18th Avenue.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
@@ -39,7 +45,7 @@ $villabate_merch = villabate_merch_items();
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"className":"vb-muted"} -->
-<p class="vb-muted"><?php echo esc_html( $villabate_m[2] ); ?> · <span class="vb-price">[PRICE]</span></p>
+<p class="vb-muted"><?php echo esc_html( $villabate_m[2] ); ?> · <span class="vb-price"><?php echo esc_html( $villabate_m[3] ); ?></span></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --><?php endforeach; ?></div>
 <!-- /wp:group --></div>

@@ -168,14 +168,16 @@ function villabate_shop_notes() {
 }
 
 /**
- * Merch items: image, name, detail. Buying happens on the merch store (VILLABATE_MERCH_STORE).
+ * Merch items: image, name, detail, price. The merch is sold by Neighborhood Spot (a Shopify store
+ * that blocks embedding), so the site links to the Villabate Alba collection there.
+ * Prices and sizes as listed on that collection; update them here if they change.
  */
-define( 'VILLABATE_MERCH_STORE', 'https://www.neighborhood-spot.com' );
+define( 'VILLABATE_MERCH_STORE', 'https://neighborhood-spot.com/collections/villabate-alba' );
 
 function villabate_merch_items() {
 	return array(
-		array( 'merch-tee.jpg', 'Carretto tee · Black', '[SIZES]' ),
-		array( 'merch-hoodie.jpg', 'Carretto hoodie · Cream', '[SIZES]' ),
-		array( 'merch-collection.jpg', 'Storefront collection', 'Hoodies and tees in 5 colors' ),
+		array( 'merch-tee.jpg', 'Carretto tee · Black', 'S to 3XL', 'from $35' ),
+		array( 'merch-hoodie.jpg', 'Carretto hoodie · Bone', 'S to 3XL', 'from $65' ),
+		array( 'merch-collection.jpg', 'Storefront collection', 'Hoodies and tees in 5 colors', 'from $35' ),
 	);
 }

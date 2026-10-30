@@ -143,6 +143,7 @@ body[data-vb-season]:not([data-vb-season="summer"]) .vb-only-summer { display: n
 .vb-product figure { position: relative; }
 .vb-product img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 12px; display: block; background: #EADFCB; }
 .vb-merch .vb-product img { aspect-ratio: 1 / 1; }
+.vb-merch-note { font-size: .8125rem; color: var(--vb-muted); margin-top: 10px; }
 .vb-product h3 { font-family: var(--wp--preset--font-family--body); font-size: 1rem; font-weight: 600; }
 .vb-product .vb-muted { font-size: .875rem; }
 .vb-product__buy { margin-top: auto !important; justify-content: space-between; align-items: center; }
