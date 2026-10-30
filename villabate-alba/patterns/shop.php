@@ -1,42 +1,19 @@
 <?php
 /**
- * Title: Shop (sorted by season)
+ * Title: Shop, full (sorted by season)
  * Slug: villabate/shop
  * Categories: villabate
- * Description: Product cards that sort themselves by season. On each product card, add classes to its group: vb-in-fall, vb-in-christmas, vb-in-spring, vb-in-mothers, vb-in-fathers, vb-in-summer (in season) and vb-cat-cookies, vb-cat-pastry, vb-cat-marzipan, vb-cat-trays (filter). Seasonal specials use vb-only-SEASON so they appear only in that season. Point each Add button at the product page in the online store.
+ * Description: Product cards that sort themselves by season. On each product card, add classes to its group: vb-in-fall, vb-in-christmas, vb-in-spring, vb-in-mothers, vb-in-fathers, vb-in-summer (in season) and vb-cat-cookies, vb-cat-pastry, vb-cat-marzipan, vb-cat-trays (filter). Seasonal specials use vb-only-SEASON so they appear only in that season. Point each Add button at the product page in the online store. Used on the Shop page; the homepage uses the Shop teaser. Product data lives in villabate_shop_products() in functions.php.
  */
-$villabate_specials = array(
-	array( 'fall', 'season-thanksgiving.jpg', 'Thanksgiving turkey cake', 'Pickup only · pre-order' ),
-	array( 'christmas', 'season-christmas.jpg', 'Christmas pastry tray', 'Pickup only · pre-order' ),
-	array( 'spring', 'season-easter.jpg', 'Chocolate Easter egg', 'Handmade · in store and pickup' ),
-	array( 'mothers', 'season-mothers-day.jpg', 'Mother’s Day heart cookies', 'In store and pickup' ),
-	array( 'fathers', 'season-fathers-day.jpg', 'Father’s Day custom cake', 'Pickup only · pre-order' ),
-	array( 'summer', 'must-brioche.jpg', 'Brioche con gelato', 'In store daily' ),
-);
-$villabate_products = array(
-	array( 'shop-rainbow.jpg', 'Rainbow Cookie', 'Cookies', '$29.99', 'vb-in-christmas vb-cat-cookies' ),
-	array( 'shop-pignoli.jpg', 'Pignoli', 'Cookies', '$65.00', 'vb-in-fall vb-in-christmas vb-cat-cookies' ),
-	array( 'must-pistachio.jpg', 'Pistachio Flavored Almond Cookie', 'Cookies', '$29.99', 'vb-in-christmas vb-in-mothers vb-cat-cookies' ),
-	array( 'shop-marzipan.jpg', 'Marzipan or Frutta Martorana', 'Marzipan', '$39.99', 'vb-in-fall vb-in-christmas vb-cat-marzipan' ),
-	array( 'shop-cookie-tray.jpg', 'Cookie Tray', 'Assorted', '$60.00', 'vb-in-fall vb-in-christmas vb-in-spring vb-in-mothers vb-in-fathers vb-cat-trays' ),
-	array( 'must-sfogliatelle.jpg', 'Sfogliatelle', 'Frozen 6-pack · bake at home · next-day air', '$39.99', 'vb-in-spring vb-in-fathers vb-in-summer vb-cat-pastry' ),
-	array( 'shop-amaretti.jpg', 'Amaretti', 'Cookies', '$28.99', 'vb-in-spring vb-in-christmas vb-cat-cookies' ),
-	array( 'shop-almond-s.jpg', 'Almond S Cookie', 'Cookies · 1 lb', '$14.00', 'vb-in-spring vb-in-summer vb-cat-cookies' ),
-);
-$villabate_notes = array(
-	'fall'      => 'Thanksgiving is close, so the turkey cake and trays for the table are up front.',
-	'christmas' => 'Christmas is coming. Cookie trays, pignoli and rainbow cookies are up front.',
-	'spring'    => 'Easter’s on the way. Chocolate eggs and gift trays are up front.',
-	'mothers'   => 'For Mother’s Day, the heart cookies and trays are up front.',
-	'fathers'   => 'For Father’s Day, the cakes and sfogliatelle are up front.',
-	'summer'    => 'It’s summer, so gelato and the lighter cookies are up front.',
-);
+$villabate_specials = villabate_shop_specials();
+$villabate_products = villabate_shop_products();
+$villabate_notes    = villabate_shop_notes();
 ?>
 <!-- wp:group {"tagName":"section","anchor":"shop","className":"vb-section vb-shop","layout":{"type":"constrained"}} -->
 <section id="shop" class="wp-block-group vb-section vb-shop"><!-- wp:group {"className":"vb-shop__head","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"bottom"}} -->
 <div class="wp-block-group vb-shop__head"><!-- wp:group {"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"className":"vb-eyebrow"} -->
-<p class="vb-eyebrow">We ship every Tuesday and Wednesday</p>
+<p class="vb-eyebrow">Ships every Tuesday and Wednesday · or pick up on 18th Avenue</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->

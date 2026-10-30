@@ -1,5 +1,5 @@
 /**
- * Villabate Alba: seasons, seasonal slide-in card, seasonal shop, rotating reviews and scroll motion.
+ * Villabate Alba: seasons, seasonal slide-in card, seasonal shop and teaser, rotating reviews, slideshows and photo fades.
  *
  * Season dates (edit SEASON_RULES below to change them):
  *   fall (Thanksgiving)  Oct 1 to Nov 26
@@ -54,9 +54,10 @@
 		if ( close ) { close.addEventListener( 'click', dismissBar ); }
 	}
 
-	/* Seasonal shop */
-	var grid = document.querySelector( '.vb-shop-grid' );
-	if ( grid ) {
+	/* Seasonal shop: the full shop on the Shop page, and the 4-card teaser on the homepage */
+	document.querySelectorAll( '.vb-shop-grid' ).forEach( function ( grid ) {
+		var limit = grid.classList.contains( 'vb-shop-grid--teaser' ) ? 4 : 8;
+		var section = grid.closest( '.vb-shop' ) || document;
 		var items = Array.prototype.slice.call( grid.querySelectorAll( '.vb-product' ) );
 		items.forEach( function ( el, i ) {
 			el.setAttribute( 'data-vb-order', i );
@@ -86,13 +87,13 @@
 				el.classList.remove( 'vb-is-hidden' );
 				grid.appendChild( el );
 				var visible = show && window.getComputedStyle( el ).display !== 'none';
-				if ( visible && filter === 'season' && shown >= 8 ) { visible = false; }
+				if ( visible && filter === 'season' && shown >= limit ) { visible = false; }
 				if ( visible ) { shown++; }
 				el.classList.toggle( 'vb-is-hidden', ! visible );
 			} );
 		};
 
-		var chips = Array.prototype.slice.call( document.querySelectorAll( '.vb-chip' ) );
+		var chips = Array.prototype.slice.call( section.querySelectorAll( '.vb-chip' ) );
 		var pick = function ( chip ) {
 			chips.forEach( function ( c ) { c.classList.remove( 'is-active' ); c.setAttribute( 'aria-pressed', 'false' ); } );
 			chip.classList.add( 'is-active' );
@@ -105,13 +106,7 @@
 			chip.addEventListener( 'click', function () { pick( chip ); } );
 		} );
 		apply( 'season' );
-
-		/* Any link to #shop (menu, header button, hero) opens the shop sorted for the season */
-		var seasonChip = chips.filter( function ( c ) { return c.getAttribute( 'data-filter' ) === 'season'; } )[ 0 ];
-		document.querySelectorAll( 'a[href="#shop"]' ).forEach( function ( a ) {
-			a.addEventListener( 'click', function () { if ( seasonChip ) { pick( seasonChip ); } } );
-		} );
-	}
+	} );
 
 	/* Rotating reviews in the hero */
 	var reduce = window.matchMedia && window.matchMedia( '(prefers-reduced-motion: reduce)' ).matches;

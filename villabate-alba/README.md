@@ -8,8 +8,22 @@ A block theme. No page builder needed, and everything is editable in the normal 
 2. Upload `villabate-alba.zip` and click **Activate**.
 3. Go to **Settings > Reading**. Set "Your homepage displays" to **A static page** and pick (or create) a page called Home.
 4. The homepage loads with every section in place.
+5. Go to **Settings > Permalinks** and pick **Post name**, so the ordering pages live at `/shop/` and `/custom-cakes/`.
 
 Needs WordPress 6.4 or newer.
+
+## Pages
+
+The homepage tells the story and advertises what you can order. Ordering happens on two pages of their own, which the theme creates on activation:
+
+| Page | Slug | Template | What's on it |
+|---|---|---|---|
+| Shop | `shop` | `templates/page-shop.html` | Full shop with season sorting and filters, the holiday pre-order form, and merch with Buy buttons |
+| Custom cakes | `custom-cakes` | `templates/page-custom-cakes.html` | Ordering steps, flavors and fillings, the cake request form, weddings and events |
+
+On the homepage, the shop is a four-card seasonal teaser, the holiday section has a "Choose a pickup time" card instead of the form, and the merch and cake sections link to these pages. Menu links to homepage sections use the full homepage address, so they work from every page.
+
+Product and merch data live in `functions.php` (`villabate_shop_products()`, `villabate_shop_specials()`, `villabate_merch_items()`), so the teaser and the full shop never disagree. The merch store address is `VILLABATE_MERCH_STORE`.
 
 ## Editing content
 
@@ -51,11 +65,11 @@ These parts are placeholders in the theme. Each one needs a service or plugin:
 | Part | What to use |
 |---|---|
 | Shop "Add" buttons | Link each one to its product page in the current Shopify store, or use Shopify's Buy Button. |
-| Holiday pre-order form | Shopify local pickup with a scheduling app, or WooCommerce with a pickup-date plugin. Replace the form in the Holiday pattern. |
+| Holiday pre-order form | Shopify local pickup with a scheduling app, or WooCommerce with a pickup-date plugin. Replace the form in the Holiday pre-order form pattern (Shop page). |
 | Instagram grid | An Instagram feed plugin (for example Smash Balloon). Replace the photo grid in the Instagram pattern with the plugin's block. |
 | Reviews | Optional: a Google Reviews plugin to replace the hand-picked review cards. |
 | Newsletter signup | Mailchimp (or your email tool's) WordPress form block. Replace the form in the Footer pattern. |
-| Cake order / contact | A form plugin such as WPForms or Gravity Forms. Point the "Start a cake order" and "Plan an event" buttons at it. |
+| Cake order form | A form plugin such as WPForms or Gravity Forms. Replace the form in the Cake order form pattern (Custom cakes page). |
 | Map | Already live: a Google Maps embed in the Visit pattern, no API key needed. |
 | English / Italian | Polylang or WPML, plus Italian text. |
 

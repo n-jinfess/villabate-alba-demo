@@ -23,11 +23,11 @@
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"className":"vb-shop-link"} -->
-<div class="wp-block-button vb-shop-link"><a class="wp-block-button__link wp-element-button" href="#shop">Ship a box</a></div>
+<div class="wp-block-button vb-shop-link"><a class="wp-block-button__link wp-element-button" href="<?php echo villabate_page_url( 'shop' ); ?>">Ship a box</a></div>
 <!-- /wp:button -->
 
 <!-- wp:button {"className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="#cakes">Order a custom cake</a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo villabate_page_url( 'custom-cakes' ); ?>">Order a custom cake</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
 

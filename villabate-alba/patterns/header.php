@@ -14,27 +14,27 @@
 
 <!-- wp:group {"className":"vb-seasonbar","layout":{"type":"default"}} -->
 <div class="wp-block-group vb-seasonbar"><!-- wp:paragraph {"className":"vb-seasonbar__msg vb-only-fall"} -->
-<p class="vb-seasonbar__msg vb-only-fall"><span class="vb-seasonbar__tag">Thanksgiving</span> Thanksgiving orders are open. <span class="vb-seasonbar__sub">Turkey cakes, pies and cookie trays. Pick up by Wednesday, Nov 25.</span> <a href="#holiday">Order ahead →</a></p>
+<p class="vb-seasonbar__msg vb-only-fall"><span class="vb-seasonbar__tag">Thanksgiving</span> Thanksgiving orders are open. <span class="vb-seasonbar__sub">Turkey cakes, pies and cookie trays. Pick up by Wednesday, Nov 25.</span> <a href="<?php echo villabate_page_url( 'shop', 'holiday' ); ?>">Order ahead →</a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"vb-seasonbar__msg vb-only-christmas"} -->
-<p class="vb-seasonbar__msg vb-only-christmas"><span class="vb-seasonbar__tag">Christmas Eve</span> Christmas Eve orders are open. <span class="vb-seasonbar__sub">Skip the line on the 24th. Pick a time and we’ll have it ready.</span> <a href="#holiday">Order ahead →</a></p>
+<p class="vb-seasonbar__msg vb-only-christmas"><span class="vb-seasonbar__tag">Christmas Eve</span> Christmas Eve orders are open. <span class="vb-seasonbar__sub">Skip the line on the 24th. Pick a time and we’ll have it ready.</span> <a href="<?php echo villabate_page_url( 'shop', 'holiday' ); ?>">Order ahead →</a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"vb-seasonbar__msg vb-only-spring"} -->
-<p class="vb-seasonbar__msg vb-only-spring"><span class="vb-seasonbar__tag">Easter</span> Easter orders are open. <span class="vb-seasonbar__sub">Chocolate eggs, cassata, and sfince for St. Joseph’s Day.</span> <a href="#holiday">Order ahead →</a></p>
+<p class="vb-seasonbar__msg vb-only-spring"><span class="vb-seasonbar__tag">Easter</span> Easter orders are open. <span class="vb-seasonbar__sub">Chocolate eggs, cassata, and sfince for St. Joseph’s Day.</span> <a href="<?php echo villabate_page_url( 'shop', 'holiday' ); ?>">Order ahead →</a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"vb-seasonbar__msg vb-only-mothers"} -->
-<p class="vb-seasonbar__msg vb-only-mothers"><span class="vb-seasonbar__tag">Mother’s Day</span> Mother’s Day orders are open. <span class="vb-seasonbar__sub">Heart cookies and cakes for Mom. Order ahead and pick up Sunday.</span> <a href="#cakes">Order ahead →</a></p>
+<p class="vb-seasonbar__msg vb-only-mothers"><span class="vb-seasonbar__tag">Mother’s Day</span> Mother’s Day orders are open. <span class="vb-seasonbar__sub">Heart cookies and cakes for Mom. Order ahead and pick up Sunday.</span> <a href="<?php echo villabate_page_url( 'custom-cakes' ); ?>">Order ahead →</a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"vb-seasonbar__msg vb-only-fathers"} -->
-<p class="vb-seasonbar__msg vb-only-fathers"><span class="vb-seasonbar__tag">Father’s Day</span> Father’s Day cakes. <span class="vb-seasonbar__sub">Tell us what Dad’s into and we’ll put it on a cake.</span> <a href="#cakes">Order a cake →</a></p>
+<p class="vb-seasonbar__msg vb-only-fathers"><span class="vb-seasonbar__tag">Father’s Day</span> Father’s Day cakes. <span class="vb-seasonbar__sub">Tell us what Dad’s into and we’ll put it on a cake.</span> <a href="<?php echo villabate_page_url( 'custom-cakes' ); ?>">Order a cake →</a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"vb-seasonbar__msg vb-only-summer"} -->
-<p class="vb-seasonbar__msg vb-only-summer"><span class="vb-seasonbar__tag">Gelato season</span> Gelato season. <span class="vb-seasonbar__sub">Brioche con gelato every day. Cannoli contest in August.</span> <a href="#contest">See the contest →</a></p>
+<p class="vb-seasonbar__msg vb-only-summer"><span class="vb-seasonbar__tag">Gelato season</span> Gelato season. <span class="vb-seasonbar__sub">Brioche con gelato every day. Cannoli contest in August.</span> <a href="<?php echo villabate_home_url( 'contest' ); ?>">See the contest →</a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:html -->
@@ -49,26 +49,26 @@
 
 <!-- wp:group {"className":"vb-header","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group vb-header"><!-- wp:image {"linkDestination":"custom","className":"vb-logo"} -->
-<figure class="wp-block-image vb-logo"><a href="/"><img src="<?php echo villabate_img( 'logo-lockup.png' ); ?>" alt="Villabate Alba, Pasticceria Gelateria"/></a></figure>
+<figure class="wp-block-image vb-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo villabate_img( 'logo-lockup.png' ); ?>" alt="Villabate Alba, Pasticceria Gelateria"/></a></figure>
 <!-- /wp:image -->
 
 <!-- wp:navigation {"overlayMenu":"mobile","className":"vb-nav","layout":{"type":"flex","justifyContent":"center"}} -->
-<!-- wp:navigation-link {"label":"Shop","url":"#shop","kind":"custom","className":"vb-shop-link"} /-->
+<!-- wp:navigation-link {"label":"Shop","url":"<?php echo villabate_page_url( 'shop' ); ?>","kind":"custom","className":"vb-shop-link"} /-->
 
-<!-- wp:navigation-link {"label":"Custom cakes","url":"#cakes","kind":"custom"} /-->
+<!-- wp:navigation-link {"label":"Custom cakes","url":"<?php echo villabate_page_url( 'custom-cakes' ); ?>","kind":"custom"} /-->
 
-<!-- wp:navigation-link {"label":"Menu","url":"#menu","kind":"custom"} /-->
+<!-- wp:navigation-link {"label":"Menu","url":"<?php echo villabate_home_url( 'menu' ); ?>","kind":"custom"} /-->
 
-<!-- wp:navigation-link {"label":"Our story","url":"#story","kind":"custom"} /-->
+<!-- wp:navigation-link {"label":"Our story","url":"<?php echo villabate_home_url( 'story' ); ?>","kind":"custom"} /-->
 
-<!-- wp:navigation-link {"label":"Visit","url":"#visit","kind":"custom"} /-->
+<!-- wp:navigation-link {"label":"Visit","url":"<?php echo villabate_home_url( 'visit' ); ?>","kind":"custom"} /-->
 
-<!-- wp:navigation-link {"label":"Merch","url":"#merch","kind":"custom"} /-->
+<!-- wp:navigation-link {"label":"Merch","url":"<?php echo villabate_page_url( 'shop', 'merch' ); ?>","kind":"custom"} /-->
 <!-- /wp:navigation -->
 
 <!-- wp:buttons {"className":"vb-header__cta"} -->
 <div class="wp-block-buttons vb-header__cta"><!-- wp:button {"className":"vb-shop-link"} -->
-<div class="wp-block-button vb-shop-link"><a class="wp-block-button__link wp-element-button" href="#shop">Order online</a></div>
+<div class="wp-block-button vb-shop-link"><a class="wp-block-button__link wp-element-button" href="<?php echo villabate_page_url( 'shop' ); ?>">Order online</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group -->

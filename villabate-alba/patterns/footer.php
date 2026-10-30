@@ -56,7 +56,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><a href="#shop">Shop online</a><br><a href="#cakes">Custom cakes</a><br><a href="#holiday">Holiday pre-orders</a><br><a href="https://www.neighborhood-spot.com">Merch</a></p>
+<p><a href="<?php echo villabate_page_url( 'shop' ); ?>">Shop online</a><br><a href="<?php echo villabate_page_url( 'custom-cakes' ); ?>">Custom cakes</a><br><a href="<?php echo villabate_page_url( 'shop', 'holiday' ); ?>">Holiday pre-orders</a><br><a href="<?php echo villabate_page_url( 'shop', 'merch' ); ?>">Merch</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
@@ -66,7 +66,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><a href="#story">Our story</a><br><a href="#gallery">Gallery</a><br><a href="#reviews">Reviews</a><br><a href="#visit">Visit</a></p>
+<p><a href="<?php echo villabate_home_url( 'story' ); ?>">Our story</a><br><a href="<?php echo villabate_home_url( 'gallery' ); ?>">Gallery</a><br><a href="<?php echo villabate_home_url( 'reviews' ); ?>">Reviews</a><br><a href="<?php echo villabate_home_url( 'visit' ); ?>">Visit</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 

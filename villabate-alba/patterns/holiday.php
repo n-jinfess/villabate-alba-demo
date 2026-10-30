@@ -3,7 +3,7 @@
  * Title: Holiday pre-orders
  * Slug: villabate/holiday
  * Categories: villabate
- * Description: Skip-the-line pre-order block and the "every feast on the calendar" strip. The form is a visual placeholder: replace it with the store's local-pickup checkout or a form plugin (see README).
+ * Description: Skip-the-line pitch and the "every feast on the calendar" strip (homepage). The pre-order form itself is on the Shop page.
  */
 $villabate_feasts = array(
 	array( 'holiday-easter.jpg', 'Easter', 'Hand-painted chocolate eggs' ),
@@ -34,29 +34,21 @@ $villabate_feasts = array(
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center"} -->
-<div class="wp-block-column is-vertically-aligned-center"><!-- wp:html -->
-<form class="vb-preorder" action="#" method="post">
-  <p class="vb-preorder__title">Pre-order for pickup</p>
-  <label for="vb-date">Pickup date</label>
-  <select id="vb-date" name="pickup_date">
-    <option>Wed, Nov 25 · Thanksgiving Eve</option>
-    <option>Thu, Dec 24 · Christmas Eve</option>
-  </select>
-  <fieldset>
-    <legend>Pickup window</legend>
-    <div class="vb-slots">
-      <label><input type="radio" name="slot" checked> 7 to 9 AM</label>
-      <label><input type="radio" name="slot"> 9 to 11 AM</label>
-      <label><input type="radio" name="slot"> 11 AM to 1 PM</label>
-      <label><input type="radio" name="slot"> 1 to 3 PM</label>
-      <label><input type="radio" name="slot"> 3 to 5 PM</label>
-      <label><input type="radio" name="slot"> 5 to 8 PM</label>
-    </div>
-  </fieldset>
-  <p class="vb-preorder__note">Pay online, then pick up at 7001 18th Ave, Brooklyn. Check your items against the list on the box.</p>
-  <button type="submit">Start my order</button>
-</form>
-<!-- /wp:html --></div>
+<div class="wp-block-column is-vertically-aligned-center"><!-- wp:group {"className":"vb-preorder vb-preorder--cta","layout":{"type":"default"}} -->
+<div class="wp-block-group vb-preorder vb-preorder--cta"><!-- wp:paragraph {"className":"vb-preorder__title"} -->
+<p class="vb-preorder__title">Pre-order for pickup</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"vb-preorder__note"} -->
+<p class="vb-preorder__note">Pick your day and a two-hour window, pay online, and walk past the line on 18th Avenue.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"width":100} -->
+<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button" href="<?php echo villabate_page_url( 'shop', 'holiday' ); ?>">Choose a pickup time →</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:group --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 

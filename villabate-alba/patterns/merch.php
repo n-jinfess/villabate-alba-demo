@@ -3,16 +3,12 @@
  * Title: Merch (la bottega)
  * Slug: villabate/merch
  * Categories: villabate
- * Description: Carretto and storefront apparel, linking to the merch store.
+ * Description: Carretto and storefront apparel (homepage). Links to the merch section of the Shop page, where the Buy buttons are.
  */
-$villabate_merch = array(
-	array( 'merch-tee.jpg', 'Carretto tee · Black', '[SIZES]' ),
-	array( 'merch-hoodie.jpg', 'Carretto hoodie · Cream', '[SIZES]' ),
-	array( 'merch-collection.jpg', 'Storefront collection', 'Hoodies and tees in 5 colors' ),
-);
+$villabate_merch = villabate_merch_items();
 ?>
-<!-- wp:group {"tagName":"section","anchor":"merch","className":"vb-section vb-merch","layout":{"type":"constrained"}} -->
-<section id="merch" class="wp-block-group vb-section vb-merch"><!-- wp:columns {"verticalAlignment":"center"} -->
+<!-- wp:group {"tagName":"section","anchor":"la-bottega","className":"vb-section vb-merch","layout":{"type":"constrained"}} -->
+<section id="la-bottega" class="wp-block-group vb-section vb-merch"><!-- wp:columns {"verticalAlignment":"center"} -->
 <div class="wp-block-columns are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"38%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:38%"><!-- wp:paragraph {"className":"vb-script"} -->
 <p class="vb-script">la bottega</p>
@@ -28,7 +24,7 @@ $villabate_merch = array(
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://www.neighborhood-spot.com">Shop merch</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo villabate_page_url( 'shop', 'merch' ); ?>">Shop merch →</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:column -->
