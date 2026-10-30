@@ -278,10 +278,10 @@ body[data-vb-season]:not([data-vb-season="summer"]) .vb-only-summer { display: n
 /* Scroll-linked sheets where the browser supports it (Chrome, Edge, Safari 26+); elsewhere the sheets just sit still */
 @supports (animation-timeline: view()) {
 	.vb-motion .vb-section:not(.vb-hero), .vb-motion .vb-footer { animation: vb-sheet-in linear both; animation-timeline: view(); animation-range: entry 0% entry 90%; }
-	.vb-motion .vb-section::after { animation: vb-sheet-dim linear both; animation-timeline: view(); animation-range: exit 10% exit 100%; }
+	.vb-motion .vb-section::after { animation: vb-sheet-dim linear both; animation-timeline: view(); animation-range: exit 35% exit 100%; }
 }
 @keyframes vb-sheet-in { from { transform: scale(.92); border-radius: calc(var(--vb-sheet) * 1.6) calc(var(--vb-sheet) * 1.6) 0 0; } to { transform: none; } }
-@keyframes vb-sheet-dim { to { opacity: .45; } }
+@keyframes vb-sheet-dim { to { opacity: .28; } }
 
 /* ---------- Small screens ---------- */
 @media (max-width: 781px) {
