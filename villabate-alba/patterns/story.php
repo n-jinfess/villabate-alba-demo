@@ -20,11 +20,7 @@ $villabate_steps = array(
 );
 ?>
 <!-- wp:group {"tagName":"section","anchor":"story","className":"vb-section vb-story","layout":{"type":"constrained"}} -->
-<section id="story" class="wp-block-group vb-section vb-story"><!-- wp:html -->
-<div class="vb-tiles vb-tiles--dark" aria-hidden="true"></div>
-<!-- /wp:html -->
-
-<!-- wp:paragraph {"className":"vb-eyebrow"} -->
+<section id="story" class="wp-block-group vb-section vb-story"><!-- wp:paragraph {"className":"vb-eyebrow"} -->
 <p class="vb-eyebrow">La nostra storia</p>
 <!-- /wp:paragraph -->
 

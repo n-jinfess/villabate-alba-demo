@@ -19,7 +19,6 @@
 	--vb-display: var(--wp--preset--font-family--display, Fraunces, Georgia, serif);
 	--vb-script: var(--wp--preset--font-family--script, Italianno, cursive);
 	--vb-tile: url("../images/majolica-tile.svg");
-	--vb-tile-dark: url("../images/majolica-tile-dark.svg");
 }
 
 body { margin: 0; }
@@ -43,7 +42,6 @@ body { margin: 0; }
 .vb-topbar .vb-tricolore { background: linear-gradient(90deg, var(--vb-green) 0 33.33%, #fff 33.33% 66.66%, var(--vb-red) 66.66%); box-shadow: inset 0 -1px 0 var(--vb-line); }
 .vb-tiles { height: 24px; background: var(--vb-tile) repeat-x left center / 24px 24px; }
 .vb-tiles--tall { height: 48px; background-size: 48px 48px; }
-.vb-tiles--dark { height: 48px; background-image: var(--vb-tile-dark); background-size: 48px 48px; margin: calc(-1 * clamp(56px, 7vw, 88px)) -24px clamp(40px, 5vw, 72px); }
 .vb-awning { height: 40px; background: url("../images/awning.svg") repeat-x left top / 84px 40px; }
 .vb-topbar { margin: 0; }
 .vb-header { max-width: 1200px; margin: 0 auto; padding: 14px 24px; gap: 16px; }
@@ -356,7 +354,6 @@ body { overflow-x: clip; -webkit-tap-highlight-color: transparent; }
 .vb-footer { padding-bottom: calc(32px + env(safe-area-inset-bottom)); }
 @media (max-width: 600px) {
 	.vb-section { padding: 44px max(18px, env(safe-area-inset-left)) 44px max(18px, env(safe-area-inset-right)); }
-	.vb-tiles--dark { margin-inline: -18px; }
 	.vb-header { padding: 10px 18px; }
 	.vb-logo img { height: 46px; }
 	.vb-hero__cols { gap: 28px; }
