@@ -1,5 +1,5 @@
 /**
- * Villabate Alba: seasons, seasonal slide-in card, seasonal shop and rotating reviews.
+ * Villabate Alba: seasons, seasonal slide-in card, seasonal shop, rotating reviews and scroll motion.
  *
  * Season dates (edit SEASON_RULES below to change them):
  *   fall (Thanksgiving)  Oct 1 to Nov 26
@@ -145,4 +145,45 @@
 		box.addEventListener( 'focusout', start );
 		start();
 	} );
+
+	/* Scroll motion: each block rises in as it reaches the viewport, cards in a row one after another */
+	var root = document.documentElement;
+	if ( root.classList.contains( 'vb-motion' ) ) {
+		if ( ! ( 'IntersectionObserver' in window ) ) {
+			root.classList.remove( 'vb-motion' );
+		} else {
+			var GRIDS = '.vb-must-grid, .vb-card-grid, .vb-shop-grid, .vb-merch-grid, .vb-feasts, .vb-timeline, .vb-review-grid, .vb-ig-grid, .vb-press, .vb-tile-panel, .vb-contest__photos, .vb-steps';
+			var targets = [];
+			var mark = function ( el, i ) {
+				el.classList.add( 'vb-reveal' );
+				el.style.setProperty( '--vb-d', ( Math.min( i, 6 ) * 0.08 ) + 's' );
+				targets.push( el );
+			};
+			var collect = function ( parent ) {
+				var i = 0;
+				Array.prototype.forEach.call( parent.children, function ( el ) {
+					if ( el.matches( '.vb-tiles, .vb-tricolore, script, style' ) ) { return; }
+					if ( el.matches( GRIDS ) ) {
+						Array.prototype.forEach.call( el.children, function ( card, k ) { mark( card, k ); } );
+					} else if ( el.matches( '.wp-block-columns, .wp-block-column, .vb-framed' ) || el.querySelector( GRIDS ) ) {
+						collect( el );
+					} else {
+						mark( el, i++ );
+					}
+				} );
+			};
+			document.querySelectorAll( '.vb-section, .vb-footer' ).forEach( collect );
+
+			var io = new IntersectionObserver( function ( entries ) {
+				entries.forEach( function ( entry ) {
+					if ( entry.isIntersecting ) {
+						entry.target.classList.add( 'is-in' );
+						io.unobserve( entry.target );
+					}
+				} );
+			}, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 } );
+			targets.forEach( function ( el ) { io.observe( el ); } );
+		}
+		root.classList.add( 'vb-ready' );
+	}
 }() );

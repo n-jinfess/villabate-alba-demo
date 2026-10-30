@@ -25,6 +25,15 @@ function villabate_assets() {
 add_action( 'wp_enqueue_scripts', 'villabate_assets' );
 
 /**
+ * Turn on scroll motion before first paint so content does not flash before it animates in.
+ * Skipped for visitors who ask for reduced motion; villabate.js marks the page ready.
+ */
+function villabate_motion_flag() {
+	echo "<script>if(!window.matchMedia||!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('vb-motion')}</script>\n";
+}
+add_action( 'wp_head', 'villabate_motion_flag', 1 );
+
+/**
  * Same look inside the block editor.
  */
 function villabate_editor_assets() {
