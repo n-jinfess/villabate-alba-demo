@@ -29,7 +29,7 @@ $villabate_merch = villabate_merch_items();
 <!-- /wp:buttons -->
 
 <!-- wp:paragraph {"className":"vb-merch-note"} -->
-<p class="vb-merch-note">Sold through Neighborhood Spot, or pick some up at the shop on 18th Avenue.</p>
+<p class="vb-merch-note">Sold online through Neighborhood Spot.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
