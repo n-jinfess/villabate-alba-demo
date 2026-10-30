@@ -118,7 +118,7 @@ body[data-vb-season]:not([data-vb-season="summer"]) .vb-only-summer { display: n
 .vb-must h3 { font-size: 1.3rem; margin: 0 0 6px; }
 .vb-must p { font-size: .8125rem; color: var(--vb-muted); line-height: 1.45; margin: 0 0 8px; }
 .vb-must::after { display: inline-block; font-size: .75rem; font-weight: 600; padding: 3px 10px; border-radius: 999px; }
-.vb-badge-ships::after { content: "Ships"; background: var(--vb-green); color: #fff; }
+.vb-badge-ships::after { content: "Ships"; background: var(--vb-green); color: #fff; border: 1px solid var(--vb-green); }
 .vb-badge-store::after { content: "In store only"; border: 1px solid var(--vb-red); color: var(--vb-red); }
 
 /* ---------- What we bake ---------- */
