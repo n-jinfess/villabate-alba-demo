@@ -1,0 +1,23 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"landingPage": "/",
+	"preferredVersions": { "php": "8.2", "wp": "latest" },
+	"features": { "networking": true },
+	"login": true,
+	"steps": [
+		{
+			"step": "installTheme",
+			"themeData": {
+				"resource": "git:directory",
+				"url": "https://github.com/n-jinfess/villabate-alba-demo",
+				"ref": "main",
+				"path": "villabate-alba"
+			},
+			"options": { "activate": true }
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php require '/wordpress/wp-load.php'; $id = wp_insert_post( array( 'post_title' => 'Home', 'post_status' => 'publish', 'post_type' => 'page', 'post_content' => '' ) ); update_option( 'show_on_front', 'page' ); update_option( 'page_on_front', $id ); update_option( 'blogname', 'Villabate Alba' ); update_option( 'blogdescription', 'Pasticceria, Brooklyn' ); flush_rewrite_rules();"
+		}
+	]
+}

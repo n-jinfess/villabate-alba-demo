@@ -259,6 +259,40 @@ body[data-vb-season]:not([data-vb-season="summer"]) .vb-only-summer { display: n
 	.vb-contest__photos { grid-template-rows: 180px 180px; }
 	.vb-slots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+/* Phones (iPhone widths 375 to 430): tighter spacing, notch-safe edges, no iOS input zoom */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { overflow-x: clip; -webkit-tap-highlight-color: transparent; }
+.vb-footer { padding-bottom: calc(32px + env(safe-area-inset-bottom)); }
+@media (max-width: 600px) {
+	.vb-section { padding: 44px max(18px, env(safe-area-inset-left)) 44px max(18px, env(safe-area-inset-right)); }
+	.vb-tiles--dark { margin-inline: -18px; }
+	.vb-header { padding: 10px 18px; }
+	.vb-logo img { height: 46px; }
+	.vb-hero__cols { gap: 28px; }
+	.vb-lede { font-size: 1rem; }
+	.vb-stats { gap: 16px 22px; flex-wrap: wrap; }
+	.vb-framed { padding: 24px 18px; outline-offset: -10px; }
+	.vb-must-grid, .vb-card-grid, .vb-shop-grid, .vb-merch-grid, .vb-feasts, .vb-press, .vb-review-grid { gap: 14px; }
+	.vb-review { padding: 22px; }
+	.vb-review p { font-size: 1.125rem; }
+	.vb-preorder { padding: 20px; }
+	.vb-slots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+	.vb-euro img, .vb-inside__photos img { height: 220px; }
+	.vb-visit .vb-framed-photo img { height: 240px; }
+	.vb-map { height: 240px; }
+	.vb-events { flex-wrap: wrap; }
+	.vb-footer { padding-inline: max(18px, env(safe-area-inset-left)); }
+	.vb-footer > .vb-tricolore { margin-inline: -18px; }
+	.vb-footer__links { line-height: 2.2; }
+	.vb-footer__links a { display: inline-block; padding: 4px 0; }
+	.wp-block-buttons { gap: 10px; }
+	.wp-block-button__link { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; }
+	/* Slide-in card sits above the iPhone home indicator and spans the width */
+	.vb-seasonbar { left: 12px; right: 12px; width: auto; bottom: calc(12px + env(safe-area-inset-bottom)); transform: translateY(calc(100% + 40px)); }
+	.vb-seasonbar.is-in { transform: none; }
+	/* 16px inputs stop Safari zooming the page on focus */
+	.vb-preorder select, .vb-news input, .vb-preorder input, .vb-preorder textarea { font-size: 16px; }
+}
 @media (prefers-reduced-motion: reduce) {
 	.vb-seasonbar { transition: none; }
 	.vb-rotator.is-ready .vb-rq, .vb-dots span { transition: none; }
