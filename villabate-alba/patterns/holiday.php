@@ -41,6 +41,7 @@ $villabate_feasts = array(
 			'feast-gingerbread-house.jpg' => 'A decorated gingerbread house',
 			'feast-cannoli-tree.jpg'      => 'A Christmas tree built from green cannoli',
 			'feast-gingerbread-man.jpg'   => 'A gingerbread man cake',
+			'season-christmas.jpg'        => 'A tray of Christmas pastries',
 		),
 	),
 );
