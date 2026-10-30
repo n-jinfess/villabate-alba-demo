@@ -315,12 +315,12 @@ body { overflow-x: clip; -webkit-tap-highlight-color: transparent; }
 	.vb-shop .vb-product__buy { flex-direction: column; align-items: stretch; gap: 6px; }
 	.vb-shop .vb-product__buy .wp-block-button, .vb-shop .vb-product__buy .wp-block-button__link { width: 100%; }
 	.vb-shop .vb-product__buy .wp-block-button__link { min-height: 40px; }
-	.vb-chips { flex-wrap: nowrap; overflow-x: auto; margin-inline: -18px; padding-inline: 18px; scrollbar-width: none; }
+	.vb-chips { flex-wrap: nowrap; overflow-x: auto; margin-inline: -18px !important; padding-inline: 18px; scrollbar-width: none; }
 	.vb-chips::-webkit-scrollbar { display: none; }
 	.vb-chip { flex: 0 0 auto; }
 
 	/* Swipe rows: cards scroll sideways and the next one peeks in */
-	.vb-card-grid, .vb-feasts, .vb-timeline, .vb-merch-grid, .vb-review-grid { display: flex !important; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 18px; margin-inline: -18px; padding: 0 18px 6px; gap: 14px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+	.vb-card-grid, .vb-feasts, .vb-timeline, .vb-merch-grid, .vb-review-grid { display: flex !important; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 18px; margin-inline: -18px !important; padding: 0 18px 6px; gap: 14px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
 	.vb-card-grid::-webkit-scrollbar, .vb-feasts::-webkit-scrollbar, .vb-timeline::-webkit-scrollbar, .vb-merch-grid::-webkit-scrollbar, .vb-review-grid::-webkit-scrollbar { display: none; }
 	.vb-card-grid > *, .vb-feasts > *, .vb-timeline > *, .vb-merch-grid > *, .vb-review-grid > * { flex: 0 0 78%; scroll-snap-align: start; margin: 0 !important; }
 	.vb-feasts > * { flex-basis: 46%; }
