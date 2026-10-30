@@ -49,9 +49,9 @@
 			bar.hidden = true;
 			try { window.sessionStorage.setItem( 'vbBarClosed', season ); } catch ( e ) {}
 		};
+		/* Only the close button dismisses it (remembered for the visit); scrolling leaves it alone */
 		var close = bar.querySelector( '.vb-seasonbar__close' );
 		if ( close ) { close.addEventListener( 'click', dismissBar ); }
-		if ( ! bar.hidden ) { window.addEventListener( 'scroll', dismissBar, { passive: true, once: true } ); }
 	}
 
 	/* Seasonal shop */
@@ -137,7 +137,7 @@
 		show( 0 );
 
 		var timer = null;
-		var start = function () { timer = window.setInterval( function () { current = ( current + 1 ) % quotes.length; show( current ); }, reduce ? 9000 : 5500 ); };
+		var start = function () { timer = window.setInterval( function () { current = ( current + 1 ) % quotes.length; show( current ); }, reduce ? 9000 : 3000 ); };
 		var stop = function () { window.clearInterval( timer ); };
 		box.addEventListener( 'mouseenter', stop );
 		box.addEventListener( 'mouseleave', start );
