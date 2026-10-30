@@ -14,27 +14,27 @@
 
 <!-- wp:group {"className":"vb-seasonbar","layout":{"type":"default"}} -->
 <div class="wp-block-group vb-seasonbar"><!-- wp:paragraph {"className":"vb-seasonbar__msg vb-only-fall"} -->
-<p class="vb-seasonbar__msg vb-only-fall"><span class="vb-seasonbar__tag">Thanksgiving</span> Thanksgiving orders are open. <span class="vb-seasonbar__sub">Turkey cakes, pies and cookie trays. Pick up by Wednesday, Nov 25.</span> <a href="<?php echo villabate_page_url( 'shop', 'holiday' ); ?>">Order ahead →</a></p>
+<p class="vb-seasonbar__msg vb-only-fall"><img class="vb-seasonbar__img" src="<?php echo villabate_img( 'season-thanksgiving.jpg' ); ?>" alt="" width="64" height="64"/><span class="vb-seasonbar__text"><span class="vb-seasonbar__tag">Thanksgiving</span> Thanksgiving orders are open. <span class="vb-seasonbar__sub">Turkey cakes, pies and cookie trays. Pick up by Wednesday, Nov 25.</span> <a href="<?php echo villabate_page_url( 'shop', 'holiday' ); ?>">Order ahead →</a></span></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"vb-seasonbar__msg vb-only-christmas"} -->
-<p class="vb-seasonbar__msg vb-only-christmas"><span class="vb-seasonbar__tag">Christmas Eve</span> Christmas Eve orders are open. <span class="vb-seasonbar__sub">Skip the line on the 24th. Pick a time and we’ll have it ready.</span> <a href="<?php echo villabate_page_url( 'shop', 'holiday' ); ?>">Order ahead →</a></p>
+<p class="vb-seasonbar__msg vb-only-christmas"><img class="vb-seasonbar__img" src="<?php echo villabate_img( 'feast-gingerbread-house.jpg' ); ?>" alt="" width="64" height="64"/><span class="vb-seasonbar__text"><span class="vb-seasonbar__tag">Christmas Eve</span> Christmas Eve orders are open. <span class="vb-seasonbar__sub">Skip the line on the 24th. Pick a time and we’ll have it ready.</span> <a href="<?php echo villabate_page_url( 'shop', 'holiday' ); ?>">Order ahead →</a></span></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"vb-seasonbar__msg vb-only-spring"} -->
-<p class="vb-seasonbar__msg vb-only-spring"><span class="vb-seasonbar__tag">Easter</span> Easter orders are open. <span class="vb-seasonbar__sub">Chocolate eggs, cassata, and sfince for St. Joseph’s Day.</span> <a href="<?php echo villabate_page_url( 'shop', 'holiday' ); ?>">Order ahead →</a></p>
+<p class="vb-seasonbar__msg vb-only-spring"><img class="vb-seasonbar__img" src="<?php echo villabate_img( 'feast-easter-egg.jpg' ); ?>" alt="" width="64" height="64"/><span class="vb-seasonbar__text"><span class="vb-seasonbar__tag">Easter</span> Easter orders are open. <span class="vb-seasonbar__sub">Chocolate eggs, cassata, and sfince for St. Joseph’s Day.</span> <a href="<?php echo villabate_page_url( 'shop', 'holiday' ); ?>">Order ahead →</a></span></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"vb-seasonbar__msg vb-only-mothers"} -->
-<p class="vb-seasonbar__msg vb-only-mothers"><span class="vb-seasonbar__tag">Mother’s Day</span> Mother’s Day orders are open. <span class="vb-seasonbar__sub">Heart cookies and cakes for Mom. Order ahead and pick up Sunday.</span> <a href="<?php echo villabate_page_url( 'custom-cakes' ); ?>">Order ahead →</a></p>
+<p class="vb-seasonbar__msg vb-only-mothers"><img class="vb-seasonbar__img" src="<?php echo villabate_img( 'season-mothers-day.jpg' ); ?>" alt="" width="64" height="64"/><span class="vb-seasonbar__text"><span class="vb-seasonbar__tag">Mother’s Day</span> Mother’s Day orders are open. <span class="vb-seasonbar__sub">Heart cookies and cakes for Mom. Order ahead and pick up Sunday.</span> <a href="<?php echo villabate_page_url( 'custom-cakes' ); ?>">Order ahead →</a></span></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"vb-seasonbar__msg vb-only-fathers"} -->
-<p class="vb-seasonbar__msg vb-only-fathers"><span class="vb-seasonbar__tag">Father’s Day</span> Father’s Day cakes. <span class="vb-seasonbar__sub">Tell us what Dad’s into and we’ll put it on a cake.</span> <a href="<?php echo villabate_page_url( 'custom-cakes' ); ?>">Order a cake →</a></p>
+<p class="vb-seasonbar__msg vb-only-fathers"><img class="vb-seasonbar__img" src="<?php echo villabate_img( 'season-fathers-day.jpg' ); ?>" alt="" width="64" height="64"/><span class="vb-seasonbar__text"><span class="vb-seasonbar__tag">Father’s Day</span> Father’s Day cakes. <span class="vb-seasonbar__sub">Tell us what Dad’s into and we’ll put it on a cake.</span> <a href="<?php echo villabate_page_url( 'custom-cakes' ); ?>">Order a cake →</a></span></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"vb-seasonbar__msg vb-only-summer"} -->
-<p class="vb-seasonbar__msg vb-only-summer"><span class="vb-seasonbar__tag">Gelato season</span> Gelato season. <span class="vb-seasonbar__sub">Brioche con gelato every day. Cannoli contest in August.</span> <a href="<?php echo villabate_home_url( 'contest' ); ?>">See the contest →</a></p>
+<p class="vb-seasonbar__msg vb-only-summer"><img class="vb-seasonbar__img" src="<?php echo villabate_img( 'must-brioche.jpg' ); ?>" alt="" width="64" height="64"/><span class="vb-seasonbar__text"><span class="vb-seasonbar__tag">Gelato season</span> Gelato season. <span class="vb-seasonbar__sub">Brioche con gelato every day. Cannoli contest in August.</span> <a href="<?php echo villabate_home_url( 'contest' ); ?>">See the contest →</a></span></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:html -->
