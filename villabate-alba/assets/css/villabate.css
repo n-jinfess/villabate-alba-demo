@@ -302,6 +302,8 @@ body[data-vb-season]:not([data-vb-season="summer"]) .vb-only-summer { display: n
 .vb-motion { --vb-sheet: 44px; }
 /* :where() keeps this at zero specificity so each section's own color still wins */
 :where(.vb-motion .vb-section) { position: relative; isolation: isolate; background-color: var(--vb-cream); }
+/* The next sheet overlaps this one by --vb-sheet, so add that much bottom padding back */
+.vb-motion .vb-section { padding-bottom: calc(clamp(56px, 7vw, 88px) + var(--vb-sheet)); }
 .vb-motion .vb-section:not(.vb-hero),
 .vb-motion .vb-footer { border-radius: var(--vb-sheet) var(--vb-sheet) 0 0; margin-top: calc(-1 * var(--vb-sheet)); box-shadow: 0 -22px 44px -18px rgba(31, 35, 64, .28); transform-origin: 50% 0; }
 .vb-motion .vb-footer { position: relative; overflow: hidden; }
@@ -385,6 +387,7 @@ body { overflow-x: clip; -webkit-tap-highlight-color: transparent; }
 	.vb-form-row { grid-template-columns: 1fr; }
 	.vb-occasions { max-width: 280px; }
 	.vb-motion { --vb-sheet: 28px; }
+	.vb-motion .vb-section { padding-bottom: calc(44px + var(--vb-sheet)); }
 
 	/* First visit: three small rounds across instead of six stacked */
 	.vb-must-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 18px 10px; }

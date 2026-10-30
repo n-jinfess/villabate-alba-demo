@@ -3,13 +3,13 @@
  * Title: Holiday pre-order form (Shop page)
  * Slug: villabate/preorder
  * Categories: villabate
- * Description: Pick a pickup date and window. The form is a visual placeholder: replace it with the store's local-pickup checkout or a form plugin (see README).
+ * Description: Pitch and the pickup form, top-aligned. Pick a pickup date and window. The form is a visual placeholder: replace it with the store's local-pickup checkout or a form plugin (see README).
  */
 ?>
 <!-- wp:group {"tagName":"section","anchor":"holiday","className":"vb-section vb-holiday","layout":{"type":"constrained"}} -->
-<section id="holiday" class="wp-block-group vb-section vb-holiday"><!-- wp:columns {"verticalAlignment":"center"} -->
-<div class="wp-block-columns are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center"} -->
-<div class="wp-block-column is-vertically-aligned-center"><!-- wp:paragraph {"className":"vb-eyebrow"} -->
+<section id="holiday" class="wp-block-group vb-section vb-holiday"><!-- wp:columns {"verticalAlignment":"top"} -->
+<div class="wp-block-columns are-vertically-aligned-top"><!-- wp:column {"verticalAlignment":"top"} -->
+<div class="wp-block-column is-vertically-aligned-top"><!-- wp:paragraph {"className":"vb-eyebrow"} -->
 <p class="vb-eyebrow">Le feste · Holiday pre-orders</p>
 <!-- /wp:paragraph -->
 
@@ -26,8 +26,8 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"verticalAlignment":"center"} -->
-<div class="wp-block-column is-vertically-aligned-center"><!-- wp:html -->
+<!-- wp:column {"verticalAlignment":"top"} -->
+<div class="wp-block-column is-vertically-aligned-top"><!-- wp:html -->
 <form class="vb-preorder" action="#" method="post">
   <p class="vb-preorder__title">Pre-order for pickup</p>
   <label for="vb-date">Pickup date</label>
